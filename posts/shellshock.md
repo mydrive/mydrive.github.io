@@ -38,4 +38,4 @@ as they were issued by our vendor.
 We continue to proactively monitor our suppliers and vendors for issues
 arising from Shellshock and otherwise.
 
-We do not believe any action is required needed by our customers.
+We do not believe any action is required from our customers.
