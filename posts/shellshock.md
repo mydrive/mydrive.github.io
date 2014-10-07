@@ -6,7 +6,7 @@ tags: ["security", "ops", "shellshock"]
 categories : ["security"]
 ---
 
-Between 24th and 28th September 2014 a number of vulnerabilties were exposed in
+Between 24th and 27th September 2014 a number of vulnerabilties were exposed in
 the `GNU bash` software installed on most computers running Linux, including:
 
 [CVE-2014-6271](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271)
