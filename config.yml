@@ -1,2 +1,8 @@
 "theme-bootstrap-2" :
   "use" : "theme"
+
+posts :
+  rss:
+    enable: true # set to false to disable rss
+    limit: 30   # default is 20
+
