@@ -3,11 +3,17 @@
   <channel>
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
-    <link/>
-    <pubDate>2014-10-08</pubDate>
+    <link>http://engineering.mydrivesolutions.com</link>
+    <pubDate>2014-10-09</pubDate>
+    <item>
+      <title>iOS Device Motion Data Collection Using Swift</title>
+      <link>http://engineering.mydrivesolutions.com/posts/swift_data_collection</link>
+      <pubDate>2014-10-08</pubDate>
+      <description>How MyDrive Solutions collects iOS device motion data using Swift and how we managed to avoid running out of memory</description>
+    </item>
     <item>
       <title>Shellshock - MyDrive's Actions</title>
-      <link>/posts/shellshock</link>
+      <link>http://engineering.mydrivesolutions.com/posts/shellshock</link>
       <pubDate>2014-10-07</pubDate>
       <description>How MyDrive Solutions responded to the Shellshock bug</description>
     </item>

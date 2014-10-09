@@ -3,26 +3,33 @@
   <channel>
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
-    <link/>
-    <pubDate>2014-10-08</pubDate>
+    <link>http://engineering.mydrivesolutions.com</link>
+    <pubDate>2014-10-09</pubDate>
     <item>
       <title>Archive</title>
-      <link>/archive</link>
+      <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
   &lt;h2&gt;2014&lt;/h2&gt;
     &lt;h3&gt;October&lt;/h3&gt;
     &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2014-10-08&lt;/span&gt; &amp;raquo; &lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;span&gt;2014-10-07&lt;/span&gt; &amp;raquo; &lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 </description>
     </item>
     <item>
       <title>Categories</title>
-      <link>/categories</link>
+      <link>http://engineering.mydrivesolutions.com/categories</link>
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
     &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -30,16 +37,24 @@
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
+  &lt;h3&gt;development (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;programming (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 </description>
     </item>
     <item>
       <title>MyDrive Engineering</title>
-      <link>/</link>
+      <link>http://engineering.mydrivesolutions.com/</link>
       <description>MyDrive Solutions Engineering Blog</description>
     </item>
     <item>
       <title>Pages</title>
-      <link>/pages</link>
+      <link>http://engineering.mydrivesolutions.com/pages</link>
       <description>
 &lt;ul&gt;
   
@@ -62,7 +77,7 @@
     </item>
     <item>
       <title>Tags</title>
-      <link>/tags</link>
+      <link>http://engineering.mydrivesolutions.com/tags</link>
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
@@ -74,6 +89,18 @@
   &lt;li&gt;
     &lt;a href="/tags#shellshock-ref"&gt;shellshock &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#iOS-ref"&gt;iOS &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Swift-ref"&gt;Swift &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#memory management-ref"&gt;memory management &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#data collection-ref"&gt;data collection &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
@@ -82,6 +109,14 @@
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="shellshock-ref"&gt;shellshock&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="iOS-ref"&gt;iOS&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Swift-ref"&gt;Swift&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="memory management-ref"&gt;memory management&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="data collection-ref"&gt;data collection&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
  
 </description>
     </item>

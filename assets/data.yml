@@ -2,7 +2,7 @@ title : MyDrive Engineering
 tagline: MyDrive Solutions Engineering Blog
 author :
   name : MyDrive Solutions
-  email : blah@email.test
+  email : press@mydrivesolutions.com
   github : mydrive
   twitter : _MyDrive
 
@@ -10,5 +10,5 @@ navigation :
   - archive
   - tags
   - categories
-  - pages
+  - posts
   - about
