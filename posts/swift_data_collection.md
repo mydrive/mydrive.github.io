@@ -99,7 +99,7 @@ func dumpArray(data: [Row]!) {
 ```
 
 The copy is then given to a custom `NSOperation` to be dump to disk outside the
-main operation queue. That operations are executed sequentially to avoid data
+main operation queue. Those operations are executed sequentially to avoid data
 being disordered.
 
 
