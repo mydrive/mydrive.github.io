@@ -35,6 +35,7 @@ class Ruhoh
       return false unless checkout_deploy_branch
       system("git", "rm", "-rf", ".")
       FileUtils.cp_r(File.join(ruhoh.config['compiled_path'], '.'), '.')
+      File.write('CNAME', "engineering.mydrivesolutions.com")
       `git add .` # system() doesn't work for some reason =/
  
       # Commit and push
