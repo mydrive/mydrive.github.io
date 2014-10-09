@@ -1,5 +1,6 @@
 ---
 title: Shellshock - MyDrive's Actions
+author: Gavin Heavyside
 date: "2014-10-07"
 description: How MyDrive Solutions responded to the Shellshock bug
 tags: ["security", "ops", "shellshock"]

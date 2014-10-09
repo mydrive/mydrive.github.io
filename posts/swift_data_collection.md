@@ -1,5 +1,5 @@
 ---
-title: iOS device motion data collection using Swift
+title: iOS Device Motion Data Collection Using Swift
 author: Carlos Alonso
 date: "2014-10-08"
 description: How MyDrive Solutions collects iOS device motion data using Swift and how we managed to avoid running out of memory
@@ -27,7 +27,9 @@ if var v = some_method() {
 
 }
 ```
+
 or
+
 ```swift
 if some_var? {
 

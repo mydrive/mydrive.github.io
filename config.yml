@@ -2,6 +2,7 @@
   "use" : "theme"
 
 posts :
+  sort: [ "date", "desc" ]
   rss:
     enable: true # set to false to disable rss
     limit: 30   # default is 20
