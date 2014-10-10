@@ -1,6 +1,6 @@
 ---
 title: iOS Device Motion Data Collection Using Swift
-author: Carlos Alonso
+author: carlos
 date: "2014-10-08"
 description: How MyDrive Solutions collects iOS device motion data using Swift and how we managed to avoid running out of memory
 tags: ["iOS", "Swift", "memory management", "data collection"]

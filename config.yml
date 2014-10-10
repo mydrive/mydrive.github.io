@@ -14,3 +14,12 @@ widgets :
     use : google
     tracking_id : 'UA-32835100-1'
 
+authors:
+  gavin:
+    name : Gavin Heavyside
+    twitter : gavinheavyside
+    bio  : Director of Engineering at MyDrive
+  carlos:
+    name : Carlos Alonso Perez
+    twitter : calonso
+    bio  : Software Engineer

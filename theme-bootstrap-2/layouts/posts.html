@@ -2,10 +2,13 @@
 layout : default
 ---
 
-{{# page.author?to_data }}
-  <strong>{{ name }}</strong>
-  <p>{{ bio }}</p>
-{{/ page.author?to_data }}
+{{# page.author }}
+  by <strong>{{ page.author.name }}</strong>
+  <p>{{ page.author.bio }}</p>
+  {{# page.author.twitter }}
+  <p><a href="https://twitter.com/{{ page.author.twitter }}" target="_blank">@{{ page.author.twitter }}</a></p>
+  {{/ page.author.twitter }}
+{{/ page.author }}
 
 <div class="page-header">
   <h1>{{ page.title }} {{# page.tagline }} <small>{{ . }}</small>{{/ page.tagline }}</h1>
