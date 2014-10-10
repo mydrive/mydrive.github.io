@@ -1,0 +1,14 @@
+title : MyDrive Engineering
+tagline: MyDrive Solutions Engineering Blog
+author :
+  name : MyDrive Solutions
+  email : press@mydrivesolutions.com
+  github : mydrive
+  twitter : _MyDrive
+
+navigation :
+  - archive
+  - tags
+  - categories
+  - posts
+  - about
