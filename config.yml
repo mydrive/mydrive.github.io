@@ -9,7 +9,8 @@ posts :
 
 production_url: 'http://engineering.mydrivesolutions.com'
 
-analytics:
-  provider: google
-  google:
-    tracking_id: 'UA-32835100-1'
+widgets :
+  analytics :
+    use : google
+    tracking_id : 'UA-32835100-1'
+
