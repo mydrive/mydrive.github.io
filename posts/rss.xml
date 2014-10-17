@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2014-10-10</pubDate>
+    <pubDate>2014-10-17</pubDate>
+    <item>
+      <title>Security Updates (POODLE and OpenSSL)</title>
+      <link>http://engineering.mydrivesolutions.com/posts/security-update-2014-10-17</link>
+      <pubDate>2014-10-17</pubDate>
+      <description>Security patches for POODLE and others applied in recent days</description>
+    </item>
     <item>
       <title>iOS Device Motion Data Collection Using Swift</title>
       <link>http://engineering.mydrivesolutions.com/posts/swift_data_collection</link>
