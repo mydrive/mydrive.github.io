@@ -28,6 +28,6 @@ allow us to apply security patches such as this across our entire
 infrastructure in moments.
 
 We continue to proactively monitor our suppliers and vendors for issues
-arising from Shellshock and otherwise.
+arising from security announcements.
 
 We do not believe any action is required from our customers.
