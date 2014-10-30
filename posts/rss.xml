@@ -7,9 +7,9 @@
     <pubDate>2014-10-30</pubDate>
     <item>
       <title>Ruby on Rails CVE-2014-7818</title>
-      <link>http://engineering.mydrivesolutions.com/posts/security-update-2014-10-30</link>
+      <link>http://engineering.mydrivesolutions.com/posts/rails-cve-2014-7818</link>
       <pubDate>2014-10-30</pubDate>
-      <description>Security patches for Ruby on Rails</description>
+      <description>Security patches for Rails CVE-2014-7818</description>
     </item>
     <item>
       <title>Security Updates (POODLE and OpenSSL)</title>
