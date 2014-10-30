@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2014-10-17</pubDate>
+    <pubDate>2014-10-30</pubDate>
+    <item>
+      <title>Ruby on Rails CVE-2014-7818</title>
+      <link>http://engineering.mydrivesolutions.com/posts/security-update-2014-10-30</link>
+      <pubDate>2014-10-30</pubDate>
+      <description>Security patches for Ruby on Rails</description>
+    </item>
     <item>
       <title>Security Updates (POODLE and OpenSSL)</title>
       <link>http://engineering.mydrivesolutions.com/posts/security-update-2014-10-17</link>

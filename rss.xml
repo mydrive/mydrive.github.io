@@ -4,7 +4,7 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2014-10-17</pubDate>
+    <pubDate>2014-10-30</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
@@ -12,6 +12,7 @@
   &lt;h2&gt;2014&lt;/h2&gt;
     &lt;h3&gt;October&lt;/h3&gt;
     &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2014-10-30&lt;/span&gt; &amp;raquo; &lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;span&gt;2014-10-17&lt;/span&gt; &amp;raquo; &lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;span&gt;2014-10-08&lt;/span&gt; &amp;raquo; &lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;span&gt;2014-10-07&lt;/span&gt; &amp;raquo; &lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
@@ -24,7 +25,7 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -34,9 +35,10 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;h3&gt;security (2)&lt;/h3&gt;
+  &lt;h3&gt;security (3)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;development (1)&lt;/h3&gt;
@@ -83,16 +85,22 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/tags#ops-ref"&gt;ops &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#ops-ref"&gt;ops &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#POODLE-ref"&gt;POODLE &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#SSL-ref"&gt;SSL &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#ruby-ref"&gt;ruby &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#rails-ref"&gt;rails &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#shellshock-ref"&gt;shellshock &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -113,14 +121,20 @@
 
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="ops-ref"&gt;ops&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="POODLE-ref"&gt;POODLE&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="SSL-ref"&gt;SSL&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="ruby-ref"&gt;ruby&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="rails-ref"&gt;rails&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/security-update-2014-10-30"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="shellshock-ref"&gt;shellshock&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="iOS-ref"&gt;iOS&lt;/h3&gt;
