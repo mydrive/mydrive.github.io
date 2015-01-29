@@ -80,7 +80,7 @@ All looks good, doesn't it? But when we run it... Crash!!
 Investigating a bit you'll find that this error is raised at the `queue.pop` consumer's
 invocation. That's because when it checked the status of the producer, it was still alive.
 Now we could try several approaches but the best and most robust one I think it is to use
-what I call 'end of operation objects'.
+what I call **end of operation objects**.
 
 Those objects are simply instances of a dummy class which purpose is to signal the end
 of the operations queue. Using end of opertion objects we could rewrite our piece
