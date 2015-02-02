@@ -20,7 +20,7 @@ two messaging layers. First one publishes object names within the bucket
 for the second one to pick them and actually download and process them and finally
 publish the results for an aggregator thread (the main program's thread).
 
-![2 Stages Pub Sub Diagram](/media/2_stages_pub_sub_diagram.png)
+![2 Stages Pub Sub Diagram](/assets/media/2_stages_pub_sub_diagram.png)
 
 My programming approach to this is leveraging all synchronisation in queues rather
 than waiting for threads or passing messages between them.
