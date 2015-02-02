@@ -51,6 +51,39 @@
         <div class="row-fluid">
   <div class="span12">
       <div class="posts">
+        <h3 class="title"><a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a> <span class="date">2015-01-29</span></h3>
+
+        <div class="summary ellipsis">
+<p>Multi-Threading programming is one of those things that I like doing from time
+to time. I find it particularly useful when automating any task that involves
+network downloading.</p>
+
+<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby's
+<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
+
+<p>Sometimes I build it using several stages, i.e. last time I used it I was building
+a tool for downloading and processing a whole S3 bucket and I designed it with
+two messaging layers. First one publishes object names within the bucket
+for the second one to pick them and actually download and process them and finally
+publish the results for an aggregator thread (the main program's thread).</p>
+
+<p><img src="/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
+
+<p>My programming approach to this is leveraging all synchronisation in queues rather
+than waiting for threads or passing messages between them.
+But don't worry, that's not a crazy or hacky approach at all, is just the Ruby's
+recommended way.</p>
+
+<p>So, what I'm going to do here is just explain by an example how to properly do
+it avoiding errors and obtaining a clean end. Let's start off by showing a
+failing example.</p>
+</div>
+
+        <div class="more">
+          <a href="/posts/ruby_thread_sync" class="btn btn-small">read more..</a>
+        </div>
+      </div>
+      <div class="posts">
         <h3 class="title"><a href="/posts/rails-cve-2014-7818">Ruby on Rails CVE-2014-7818</a> <span class="date">2014-10-30</span></h3>
 
         <div class="summary">

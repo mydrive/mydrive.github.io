@@ -4,11 +4,16 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2014-10-30</pubDate>
+    <pubDate>2015-02-02</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
+  &lt;h2&gt;2015&lt;/h2&gt;
+    &lt;h3&gt;January&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-01-29&lt;/span&gt; &amp;raquo; &lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;h2&gt;2014&lt;/h2&gt;
     &lt;h3&gt;October&lt;/h3&gt;
     &lt;ul&gt;
@@ -28,10 +33,10 @@
     &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -41,12 +46,14 @@
       &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;development (1)&lt;/h3&gt;
+  &lt;h3&gt;development (2)&lt;/h3&gt;
   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;programming (1)&lt;/h3&gt;
+  &lt;h3&gt;programming (2)&lt;/h3&gt;
   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 </description>
@@ -97,6 +104,24 @@
     &lt;a href="/tags#rails-ref"&gt;rails &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;a href="/tags#Ruby-ref"&gt;Ruby &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Threading-ref"&gt;Threading &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Publish-subscribe-ref"&gt;Publish-subscribe &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Messaging-ref"&gt;Messaging &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Patterns-ref"&gt;Patterns &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Synchronisation-ref"&gt;Synchronisation &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;a href="/tags#POODLE-ref"&gt;POODLE &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -131,6 +156,18 @@
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="rails-ref"&gt;rails&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Ruby-ref"&gt;Ruby&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Threading-ref"&gt;Threading&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Publish-subscribe-ref"&gt;Publish-subscribe&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Messaging-ref"&gt;Messaging&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Patterns-ref"&gt;Patterns&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Synchronisation-ref"&gt;Synchronisation&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="POODLE-ref"&gt;POODLE&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="SSL-ref"&gt;SSL&lt;/h3&gt;

@@ -54,6 +54,13 @@
         <h3 class="title"><a href="/archive">Archive</a> <span class="date"></span></h3>
 
         <div class="summary">
+  <h2>2015</h2>
+    <h3>January</h3>
+    <ul>
+      <li>
+<span>2015-01-29</span> » <a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a>
+</li>
+    </ul>
   <h2>2014</h2>
     <h3>October</h3>
     <ul>
@@ -85,10 +92,10 @@
     <a href="/categories#security-ref">security <span>3</span></a>
   </li>
   <li>
-    <a href="/categories#development-ref">development <span>1</span></a>
+    <a href="/categories#development-ref">development <span>2</span></a>
   </li>
   <li>
-    <a href="/categories#programming-ref">programming <span>1</span></a>
+    <a href="/categories#programming-ref">programming <span>2</span></a>
   </li>
 </ul>
 
@@ -98,7 +105,7 @@
       <li><a href="/posts/security-update-2014-10-17">Security Updates (POODLE and OpenSSL)</a></li>
       <li><a href="/posts/shellshock">Shellshock - MyDrive's Actions</a></li>
   </ul>
-  <h3>development (1)</h3>
+  <h3>development (2)</h3>
   </div>
 
         <div class="more">
@@ -108,15 +115,30 @@
       <div class="_root">
         <h3 class="title"><a href="/">MyDrive Engineering</a> <span class="date"></span></h3>
 
-        <div class="summary">
-<p>A vulnerability in a Ruby on Rails component was announced earlier today.</p>
+        <div class="summary ellipsis">
+<p>Multi-Threading programming is one of those things that I like doing from time
+to time. I find it particularly useful when automating any task that involves
+network downloading.</p>
 
-<p>We have determined that MyDrive's applications were not vulnerable to attack as
-we do not serve static assets through rails, instead we use our web server
-(nginx). Nevertheless we have patched all production services using Ruby on
-Rails.</p>
+<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby's
+<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
 
-<p>No action is required from our customers.</p>
+<p>Sometimes I build it using several stages, i.e. last time I used it I was building
+a tool for downloading and processing a whole S3 bucket and I designed it with
+two messaging layers. First one publishes object names within the bucket
+for the second one to pick them and actually download and process them and finally
+publish the results for an aggregator thread (the main program's thread).</p>
+
+<p><img src="/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
+
+<p>My programming approach to this is leveraging all synchronisation in queues rather
+than waiting for threads or passing messages between them.
+But don't worry, that's not a crazy or hacky approach at all, is just the Ruby's
+recommended way.</p>
+
+<p>So, what I'm going to do here is just explain by an example how to properly do
+it avoiding errors and obtaining a clean end. Let's start off by showing a
+failing example.</p>
 </div>
 
         <div class="more">
@@ -166,6 +188,24 @@ Rails.</p>
   </li>
   <li>
     <a href="/tags#rails-ref">rails <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Ruby-ref">Ruby <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Threading-ref">Threading <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Publish-subscribe-ref">Publish-subscribe <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Messaging-ref">Messaging <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Patterns-ref">Patterns <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Synchronisation-ref">Synchronisation <span>1</span></a>
   </li>
   <li>
     <a href="/tags#POODLE-ref">POODLE <span>1</span></a>

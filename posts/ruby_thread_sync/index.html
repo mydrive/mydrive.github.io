@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby Thread Synchronisation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Little advice on how to synchronize threads in Ruby when using the Publish-subscribe messaging pattern by using end of operation objects.">
+    <meta name="author" content="MyDrive Solutions">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-88238289010db19359d2181e634e95cd.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-e81fa375b231bedf6cb2dbc6653570cc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/google_prettify/sons-of-obsidian-afb0925bfa2d994f17dab93e13fbf999.css' type='text/css' rel='stylesheet' media='all'>
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  <link rel="shortcut icon" href="/assets/media/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">MyDrive Engineering</a>
+          <ul class="nav">
+              
+                <li><a href="/archive">Archive</a></li>
+              
+              
+                <li><a href="/tags">Tags</a></li>
+              
+              
+                <li><a href="/categories">Categories</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+          by <strong></strong>
+  <p></p>
+
+<div class="page-header">
+  <h1>Ruby Thread Synchronisation </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>2015-01-29</strong>
+    </div>
+    <div class="content">
+      <p>Multi-Threading programming is one of those things that I like doing from time
+to time. I find it particularly useful when automating any task that involves
+network downloading.</p>
+
+<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby&#39;s
+<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
+
+<p>Sometimes I build it using several stages, i.e. last time I used it I was building
+a tool for downloading and processing a whole S3 bucket and I designed it with
+two messaging layers. First one publishes object names within the bucket
+for the second one to pick them and actually download and process them and finally
+publish the results for an aggregator thread (the main program&#39;s thread).</p>
+
+<p><img src="/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
+
+<p>My programming approach to this is leveraging all synchronisation in queues rather
+than waiting for threads or passing messages between them.
+But don&#39;t worry, that&#39;s not a crazy or hacky approach at all, is just the Ruby&#39;s
+recommended way.</p>
+
+<p>So, what I&#39;m going to do here is just explain by an example how to properly do
+it avoiding errors and obtaining a clean end. Let&#39;s start off by showing a
+failing example.</p>
+
+<pre><code class="ruby">require &#39;thread&#39;
+
+queue = Queue.new
+
+producer = Thread.new {
+  5.times do |i|
+    queue &lt;&lt; i
+    sleep 1
+  end
+  p &#39;Producer exiting&#39;
+}
+
+consumer = Thread.new {
+  while producer.alive?
+    p &quot;Popped #{queue.pop}&quot;
+  end
+  p &#39;Consumer exiting&#39;
+}
+
+producer.join
+consumer.join
+</code></pre>
+
+<p>This code sets up two threads, a publisher(producer) and a subscriber(consumer).
+The producer publishes a value to the queue and sleeps a second for 5 times.
+The consumer simply pulls messages from the queue as soon as they&#39;re available.</p>
+
+<p>The producer exit condition is very straightforward. As soon as it finishes it&#39;s
+job, it simply finishes. The consumer, on his end, monitors the producer status
+and will exit as soon as it detects the producer is not alive anymore.</p>
+
+<p>Finally, the main thread waits for both to finish<a href="http://www.ruby-doc.org/core-2.2.0/Thread.html#method-i-join"><code>Thread.join</code></a>.</p>
+
+<p>All looks good, doesn&#39;t it? But when we run it... Crash!!
+<code>
+&quot;Popped 0&quot;
+&quot;Popped 1&quot;
+&quot;Popped 2&quot;
+&quot;Popped 3&quot;
+&quot;Popped 4&quot;
+&quot;Producer exiting&quot;
+`join&#39;: No live threads left. Deadlock? (fatal)
+</code></p>
+
+<p>Investigating a bit you&#39;ll find that this error is raised at the <code>queue.pop</code> consumer&#39;s
+invocation. That&#39;s because when it checked the status of the producer, it was still alive.
+Now we could try several approaches but the best and most robust one I think it is to use
+what I call &#39;end of operation objects&#39;.</p>
+
+<p>Those objects are simply instances of a dummy class which purpose is to signal the end
+of the operations queue. Using end of opertion objects we could rewrite our piece
+of code as follows:</p>
+
+<pre><code class="ruby">require &#39;thread&#39;
+
+class EndOfOp ; end
+
+queue = Queue.new
+
+producer = Thread.new {
+  5.times do |i|
+    queue &lt;&lt; i
+    sleep 1
+  end
+  p &#39;Producer exiting&#39;
+  queue &lt;&lt; EndOfOp.new
+}
+
+consumer = Thread.new {
+  while obj = queue.pop
+    break if obj.instance_of? EndOfOp
+    p &quot;Popped #{obj}&quot;
+  end
+  p &#39;Consumer exiting&#39;
+}
+
+producer.join
+consumer.join
+</code></pre>
+
+<p>Now the producer pushes an instance of the <code>EndOfOp</code> dummy class just before exiting
+to signal the consumer that it has finished its job. The consumer, on his end just
+tests every pulled object that it is not an <code>EndOfOp</code> in order to continue.</p>
+
+<p>Executing this code we would see:
+<code>
+&quot;Popped 0&quot;
+&quot;Popped 1&quot;
+&quot;Popped 2&quot;
+&quot;Popped 3&quot;
+&quot;Popped 4&quot;
+&quot;Producer exiting&quot;
+&quot;Consumer exiting&quot;
+[Finished in 5.1s]
+</code></p>
+
+<p>And that&#39;s all. Happy pubsubbing!!</p>
+
+    </div>
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      <li>
+        <a href="/categories#development-ref">development <span>2</span></a>
+      </li>
+      <li>
+        <a href="/categories#programming-ref">programming <span>2</span></a>
+      </li>
+    </ul>
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      <li>
+        <a href="/tags#Ruby-ref">Ruby <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Threading-ref">Threading <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Publish-subscribe-ref">Publish-subscribe <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Messaging-ref">Messaging <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Patterns-ref">Patterns <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Synchronisation-ref">Synchronisation <span>1</span></a>
+      </li>
+    </ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+          <li class="prev"><a href="/posts/rails-cve-2014-7818" title="Ruby on Rails CVE-2014-7818">&larr; Previous</a></li>
+
+          <li><a href="/archive">Archive</a></li>
+
+          <li class="next disabled"><a>Next &rarr;</a>
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <hr>
+      <div class="footer">
+        <p>&copy; <a href="http://mydrivesolutions.com" target="_blank">MyDrive Solutions Limited</a> 2014
+          with help from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Google Prettify -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32835100-1']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    
+  </body>
+</html>
