@@ -55,6 +55,12 @@
 
         <div class="summary">
   <h2>2015</h2>
+    <h3>February</h3>
+    <ul>
+      <li>
+<span>2015-02-02</span> » <a href="/posts/ghost">GHOST CVE-2015-0235</a>
+</li>
+    </ul>
     <h3>January</h3>
     <ul>
       <li>
@@ -89,7 +95,7 @@
         <div class="summary ellipsis">
 <ul class="tag_box inline">
   <li>
-    <a href="/categories#security-ref">security <span>3</span></a>
+    <a href="/categories#security-ref">security <span>4</span></a>
   </li>
   <li>
     <a href="/categories#development-ref">development <span>2</span></a>
@@ -99,13 +105,13 @@
   </li>
 </ul>
 
-  <h3>security (3)</h3>
+  <h3>security (4)</h3>
   <ul>
+      <li><a href="/posts/ghost">GHOST CVE-2015-0235</a></li>
       <li><a href="/posts/rails-cve-2014-7818">Ruby on Rails CVE-2014-7818</a></li>
       <li><a href="/posts/security-update-2014-10-17">Security Updates (POODLE and OpenSSL)</a></li>
       <li><a href="/posts/shellshock">Shellshock - MyDrive's Actions</a></li>
   </ul>
-  <h3>development (2)</h3>
   </div>
 
         <div class="more">
@@ -115,30 +121,26 @@
       <div class="_root">
         <h3 class="title"><a href="/">MyDrive Engineering</a> <span class="date"></span></h3>
 
-        <div class="summary ellipsis">
-<p>Multi-Threading programming is one of those things that I like doing from time
-to time. I find it particularly useful when automating any task that involves
-network downloading.</p>
+        <div class="summary">
+<p>Last week saw the first brand-name bug of 2015 in the shape of GHOST
+<a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-0235">CVE</a>,
+<a href="http://ma.ttias.be/ghost-critical-glibc-update-cve-2015-0235-gethostbyname-calls/">Explanation</a>.</p>
 
-<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby's
-<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
+<p>Using our automated config management tools (Chef) we patched all systems
+operated by MyDrive within 24 hours of a patch being made available by our
+operating system vendor, and then performed a rolling reboot of all systems as
+a precautionary measure to ensure all services were using the patched library.</p>
 
-<p>Sometimes I build it using several stages, i.e. last time I used it I was building
-a tool for downloading and processing a whole S3 bucket and I designed it with
-two messaging layers. First one publishes object names within the bucket
-for the second one to pick them and actually download and process them and finally
-publish the results for an aggregator thread (the main program's thread).</p>
+<p>MyDrive Solutions' operational staff closely monitor security disclosure
+announcements, and patched all systems immediately when patches were issued by
+our operating system vendor. Our automated configuration management tools
+allow us to apply security patches such as this across our entire
+infrastructure in moments.</p>
 
-<p><img src="/assets/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
+<p>We continue to proactively monitor our suppliers and vendors for issues
+arising from security announcements.</p>
 
-<p>My programming approach to this is leveraging all synchronisation in queues rather
-than waiting for threads or passing messages between them.
-But don't worry, that's not a crazy or hacky approach at all, is just the Ruby's
-recommended way.</p>
-
-<p>So, what I'm going to do here is just explain by an example how to properly do
-it avoiding errors and obtaining a clean end. Let's start off by showing a
-failing example.</p>
+<p>We do not believe any action is required from our customers.</p>
 </div>
 
         <div class="more">
@@ -178,7 +180,10 @@ failing example.</p>
         <div class="summary ellipsis">
 <ul class="tag_box inline">
   <li>
-    <a href="/tags#security-ref">security <span>3</span></a>
+    <a href="/tags#security-ref">security <span>4</span></a>
+  </li>
+  <li>
+    <a href="/tags#ghost-ref">ghost <span>1</span></a>
   </li>
   <li>
     <a href="/tags#ops-ref">ops <span>3</span></a>

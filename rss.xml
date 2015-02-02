@@ -10,6 +10,10 @@
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
   &lt;h2&gt;2015&lt;/h2&gt;
+    &lt;h3&gt;February&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-02-02&lt;/span&gt; &amp;raquo; &lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
     &lt;h3&gt;January&lt;/h3&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;span&gt;2015-01-29&lt;/span&gt; &amp;raquo; &lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
@@ -30,7 +34,7 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
@@ -40,8 +44,9 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;h3&gt;security (3)&lt;/h3&gt;
+  &lt;h3&gt;security (4)&lt;/h3&gt;
   &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
@@ -92,7 +97,10 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#ghost-ref"&gt;ghost &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#ops-ref"&gt;ops &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
@@ -145,9 +153,12 @@
 &lt;/ul&gt;
 
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="ghost-ref"&gt;ghost&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="ops-ref"&gt;ops&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/security-update-2014-10-17"&gt;Security Updates (POODLE and OpenSSL)&lt;/a&gt;&lt;/li&gt;

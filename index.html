@@ -56,6 +56,35 @@
 <div class="row-fluid">
   <div class="span12">
     <div class="post">
+  <h3 class="title"><a href="/posts/ghost">GHOST CVE-2015-0235</a> <span class="date">2015-02-02</span></h3>
+
+  <div class="summary">
+<p>Last week saw the first brand-name bug of 2015 in the shape of GHOST
+<a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-0235">CVE</a>,
+<a href="http://ma.ttias.be/ghost-critical-glibc-update-cve-2015-0235-gethostbyname-calls/">Explanation</a>.</p>
+
+<p>Using our automated config management tools (Chef) we patched all systems
+operated by MyDrive within 24 hours of a patch being made available by our
+operating system vendor, and then performed a rolling reboot of all systems as
+a precautionary measure to ensure all services were using the patched library.</p>
+
+<p>MyDrive Solutions' operational staff closely monitor security disclosure
+announcements, and patched all systems immediately when patches were issued by
+our operating system vendor. Our automated configuration management tools
+allow us to apply security patches such as this across our entire
+infrastructure in moments.</p>
+
+<p>We continue to proactively monitor our suppliers and vendors for issues
+arising from security announcements.</p>
+
+<p>We do not believe any action is required from our customers.</p>
+</div>
+
+  <div class="more">
+    <a href="/posts/ghost" class="btn btn-small">read more..</a>
+  </div>
+</div>
+<div class="post">
   <h3 class="title"><a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a> <span class="date">2015-01-29</span></h3>
 
   <div class="summary ellipsis">
@@ -169,45 +198,11 @@ The idea of writing</p>
     <a href="/posts/swift_data_collection" class="btn btn-small">read more..</a>
   </div>
 </div>
-<div class="post">
-  <h3 class="title"><a href="/posts/shellshock">Shellshock - MyDrive&#39;s Actions</a> <span class="date">2014-10-07</span></h3>
-
-  <div class="summary ellipsis">
-<p>Between 24th and 27th September 2014 a number of vulnerabilties were exposed in
-the <code>GNU bash</code> software installed on most computers running Linux, including:</p>
-
-<p><a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6271">CVE-2014-6271</a></p>
-
-<p><a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7169">CVE-2014-7169</a></p>
-
-<p><a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7186">CVE-2014-7186</a></p>
-
-<p><a href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7187">CVE-2014-7187</a></p>
-
-<p>These vulnerability could allow attackers to execute arbitrary code on remote
-servers, was given the nickname
-<a href="http://en.wikipedia.org/wiki/Shellshock_(software_bug)">Shellshock</a>,
-and was widely reported in both technical and mainstream media.</p>
-
-<p>Based on our analysis of the vulnerability in context of the services we
-operate and our system configuration we do not believe our infrastructure was
-susceptible to attack using this vulnerability.</p>
-
-<p>MyDrive Solutions' operational staff closely monitor security disclosure
-announcements, and patched all systems immediately when patches were issued by
-our operating system vendor. Our automated configuration management tools
-allow us to apply security patches such as this across our entire
-infrastructure in moments.</p>
-</div>
-
-  <div class="more">
-    <a href="/posts/shellshock" class="btn btn-small">read more..</a>
-  </div>
-</div>
 
 <div class="pagination">
   <ul>
       <li class="active"><a href="/posts/index/1">1</a></li>
+      <li><a href="/posts/index/2">2</a></li>
   </ul>
 </div>
 

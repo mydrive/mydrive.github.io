@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Ruby on Rails CVE-2014-7818</title>
+    <title>GHOST CVE-2015-0235</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Security patches for Rails CVE-2014-7818">
+    <meta name="description" content="Patching the GHOST Vulnerability">
     <meta name="author" content="MyDrive Solutions">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -54,23 +54,34 @@
   <p><a href="https://twitter.com/gavinheavyside" target="_blank">@gavinheavyside</a></p>
 
 <div class="page-header">
-  <h1>Ruby on Rails CVE-2014-7818 </h1>
+  <h1>GHOST CVE-2015-0235 </h1>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
     <div class="date">
-      <span>2014-10-30</strong>
+      <span>2015-02-02</strong>
     </div>
     <div class="content">
-      <p>A vulnerability in a Ruby on Rails component was announced earlier today.</p>
+      <p>Last week saw the first brand-name bug of 2015 in the shape of GHOST
+<a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-0235">CVE</a>,
+<a href="http://ma.ttias.be/ghost-critical-glibc-update-cve-2015-0235-gethostbyname-calls/">Explanation</a>.</p>
 
-<p>We have determined that MyDrive&#39;s applications were not vulnerable to attack as
-we do not serve static assets through rails, instead we use our web server
-(nginx). Nevertheless we have patched all production services using Ruby on
-Rails.</p>
+<p>Using our automated config management tools (Chef) we patched all systems
+operated by MyDrive within 24 hours of a patch being made available by our
+operating system vendor, and then performed a rolling reboot of all systems as
+a precautionary measure to ensure all services were using the patched library.</p>
 
-<p>No action is required from our customers.</p>
+<p>MyDrive Solutions&#39; operational staff closely monitor security disclosure
+announcements, and patched all systems immediately when patches were issued by
+our operating system vendor. Our automated configuration management tools
+allow us to apply security patches such as this across our entire
+infrastructure in moments.</p>
+
+<p>We continue to proactively monitor our suppliers and vendors for issues
+arising from security announcements.</p>
+
+<p>We do not believe any action is required from our customers.</p>
 
     </div>
     <ul class="tag_box inline">
@@ -85,23 +96,17 @@ Rails.</p>
         <a href="/tags#security-ref">security <span>4</span></a>
       </li>
       <li>
-        <a href="/tags#ops-ref">ops <span>3</span></a>
-      </li>
-      <li>
-        <a href="/tags#ruby-ref">ruby <span>1</span></a>
-      </li>
-      <li>
-        <a href="/tags#rails-ref">rails <span>1</span></a>
+        <a href="/tags#ghost-ref">ghost <span>1</span></a>
       </li>
     </ul>
     <hr>
     <div class="pagination">
       <ul>
-          <li class="prev"><a href="/posts/security-update-2014-10-17" title="Security Updates (POODLE and OpenSSL)">&larr; Previous</a></li>
+          <li class="prev"><a href="/posts/ruby_thread_sync" title="Ruby Thread Synchronisation">&larr; Previous</a></li>
 
           <li><a href="/archive">Archive</a></li>
 
-          <li class="next"><a href="/posts/ruby_thread_sync" title="Ruby Thread Synchronisation">Next &rarr;</a></li>
+          <li class="next disabled"><a>Next &rarr;</a>
       </ul>
     </div>
     <hr>

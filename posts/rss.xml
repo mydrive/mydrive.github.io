@@ -6,6 +6,12 @@
     <link>http://engineering.mydrivesolutions.com</link>
     <pubDate>2015-02-02</pubDate>
     <item>
+      <title>GHOST CVE-2015-0235</title>
+      <link>http://engineering.mydrivesolutions.com/posts/ghost</link>
+      <pubDate>2015-02-02</pubDate>
+      <description>Patching the GHOST Vulnerability</description>
+    </item>
+    <item>
       <title>Ruby Thread Synchronisation</title>
       <link>http://engineering.mydrivesolutions.com/posts/ruby_thread_sync</link>
       <pubDate>2015-01-29</pubDate>
