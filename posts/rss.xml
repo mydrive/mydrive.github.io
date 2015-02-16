@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-02-02</pubDate>
+    <pubDate>2015-02-16</pubDate>
+    <item>
+      <title>MyDrive team helping bright minds in Africa</title>
+      <link>http://engineering.mydrivesolutions.com/posts/africa_mentorship</link>
+      <pubDate>2015-02-13</pubDate>
+      <description>A few lines about the experience we are having from participating in HackHands Africa Mentorship program and to help spread the word.</description>
+    </item>
     <item>
       <title>GHOST CVE-2015-0235</title>
       <link>http://engineering.mydrivesolutions.com/posts/ghost</link>
