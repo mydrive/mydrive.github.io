@@ -10,10 +10,9 @@ categories: ["development", "programming", "continuous improvement", "kanban"]
 The aim of this post is to suggest that task switching is cognitively expensive and that Kanban as an agile methodology
 lends itself to reducing the cost of task switching.
 
-A beginning is a very important time in a person's career. This has recently been highlighted to me in terms
-of the bad habits I developed in my previous job. Coming from a Linux System Administrator background, where an ad
-hoc attitude was taken to the work I was given, I struggled to adapt to the work-on-one-thing-at-a-time mentalility 
-here [@MyDrive](https://twitter.com/_mydrive).
+The approach to work in my last job was very different from MyDrive. Coming from a Linux System Administrator background, where an ad
+hoc attitude was taken to the work I was given, I had to adapt to the work-on-one-thing-at-a-time mentalility 
+here which has some transformational benefits by comparison.
 
 Luckily for me, the team here is incredibly proactive and are always willing to educate and improve on
 how we work as a unit. We have already had detailed sessions on Kanban (today's session inspired this
