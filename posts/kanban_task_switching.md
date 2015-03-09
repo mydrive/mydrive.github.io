@@ -2,7 +2,7 @@
 title: Calculating the cost of task switching: why we use Kanban here at MyDrive.
 author: william
 date: "2015-03-09"
-description: Some thoughts about the detrimental affects of task switching and why Kanban is so awesome for eliminating it and maximising flow.
+description: Some thoughts about the detrimental effects of task switching and why Kanban is so awesome for eliminating it and maximising flow.
 tags: ["kanban", "flow", "task switching", "team work"]
 categories: ["development", "programming", "continuous improvement", "kanban"]
 ---
@@ -13,20 +13,14 @@ lends itself to reducing the cost of task switching.
 A beginning is a very important time in a person's career. This has recently been highlighted to me in terms
 of the bad habits I developed in my previous job. Coming from a Linux System Administrator background, where an ad
 hoc attitude was taken to the work I was given, I struggled to adapt to the work-on-one-thing-at-a-time mentalility 
-here [@MyDrive](https://twitter.com/_mydrive). I have found myself switching between different tasks and noticed that
-this had quite a significantly adverse affect on my ability to deliver quality output when compared to other members of
-the team. And it was not making me feel good about my contributions.
+here [@MyDrive](https://twitter.com/_mydrive).
 
 Luckily for me, the team here is incredibly proactive and are always willing to educate and improve on
 how we work as a unit. We have already had detailed sessions on Kanban (today's session inspired this
-post) which have highlighted the methodological limitations of my habits. I think I need to stress that
-if you are starting out in your career as a developer, then there is nothing more important than getting the
-best possible mentors who demand a high standard of work from you. This is just as much about your sacrifice
-in terms of accepting criticism of the way you think about a problem as it is about their ability to accept
-and improve on your weakness and in engaging with you on the reasons for actions and design decisions. I believe that 
-the quality of your work is very much dependpent on your ability to focus on one thing 
-at a time and less about how brilliant you are at any given thing. Your journey to self-mastery in programming
-is at stake in this fairly simple lesson.
+post) which have highlighted the methodological limitations of my habits. A really great game that we played today
+which illustrates the value of Kanban can be found here: https://darynholmes.wordpress.com/2011/08/02/the-x-penny-game/.
+I am convinced that the quality of your work is very much dependpent on your ability to focus on one thing 
+at a time and less about how brilliant you are at any given thing.
 
 Kanban is a way of viewing and carrying out ongoing streams of work. The principals of Kanban are:
 
