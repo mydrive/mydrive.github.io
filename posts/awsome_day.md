@@ -3,7 +3,7 @@ title: AWS AWSome Day
 author: mike
 date: "2015-03-12"
 description: Learning more about using AWS for all the things
-tags: ["AWS", "Amazon", "Cloud", "RDS", "Africa", "Pair programming"]
+tags: ["AWS", "Amazon", "Cloud", "RDS", ]
 categories: ["development", "operations", "aws", "devops"]
 ---
 
@@ -14,7 +14,7 @@ We've been using them for a long time, initially using them to mirror a more tra
 infrastructure using cloud resources, to allow portability between cloud providers.
 
 More recently we've identified that we can make considerable cost and time savings
-if we start using more of the baked in AWS Cloud Services and we've begun that transition,
+if we start using more of the baked in AWS Managed Services and we've begun that transition,
 for example we have already moved our database infrastructure to [RDS](http://aws.amazon.com/rds/).
 
 We've also been cross skilling Developers and Operations staff to allow us to
