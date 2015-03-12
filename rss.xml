@@ -10,6 +10,10 @@
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
   &lt;h2&gt;2015&lt;/h2&gt;
+    &lt;h3&gt;March&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-03-12&lt;/span&gt; &amp;raquo; &lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
     &lt;h3&gt;February&lt;/h3&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;span&gt;2015-02-13&lt;/span&gt; &amp;raquo; &lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
@@ -35,7 +39,7 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
@@ -44,13 +48,23 @@
     &lt;a href="/categories#mentoring-ref"&gt;mentoring &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;a href="/categories#operations-ref"&gt;operations &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#aws-ref"&gt;aws &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#devops-ref"&gt;devops &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;h3&gt;development (3)&lt;/h3&gt;
+  &lt;h3&gt;development (4)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
@@ -63,6 +77,18 @@
   &lt;h3&gt;mentoring (1)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;operations (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;aws (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;devops (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;security (4)&lt;/h3&gt;
   &lt;ul&gt;
@@ -123,6 +149,18 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#Pair programming-ref"&gt;Pair programming &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#AWS-ref"&gt;AWS &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Amazon-ref"&gt;Amazon &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Cloud-ref"&gt;Cloud &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#RDS-ref"&gt;RDS &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
@@ -190,6 +228,14 @@
     &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Pair programming-ref"&gt;Pair programming&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="AWS-ref"&gt;AWS&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Amazon-ref"&gt;Amazon&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Cloud-ref"&gt;Cloud&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="RDS-ref"&gt;RDS&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AWS AWSome Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning more about using AWS for all the things">
+    <meta name="author" content="MyDrive Solutions">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-88238289010db19359d2181e634e95cd.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-e81fa375b231bedf6cb2dbc6653570cc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/google_prettify/sons-of-obsidian-afb0925bfa2d994f17dab93e13fbf999.css' type='text/css' rel='stylesheet' media='all'>
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  <link rel="shortcut icon" href="/assets/media/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">MyDrive Engineering</a>
+          <ul class="nav">
+              
+                <li><a href="/archive">Archive</a></li>
+              
+              
+                <li><a href="/tags">Tags</a></li>
+              
+              
+                <li><a href="/categories">Categories</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+          by <strong>Michael Hefferan</strong>
+  <p>Senior Software Engineer at MyDrive</p>
+  <p><a href="https://twitter.com/mheffera" target="_blank">@mheffera</a></p>
+
+<div class="page-header">
+  <h1>AWS AWSome Day </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>2015-03-12</strong>
+    </div>
+    <div class="content">
+      <p><img src="/assets/media/awsome_day.jpg" alt="AWSome Day banner"></p>
+
+<p>We make extensive use of AWS infrastructure <a href="https://twitter.com/_mydrive">@MyDrive</a>.
+We&#39;ve been using them for a long time, initially using them to mirror a more traditional
+infrastructure using cloud resources, to allow portability between cloud providers.</p>
+
+<p>More recently we&#39;ve identified that we can make considerable cost and time savings
+if we start using more of the baked in AWS Managed Services and we&#39;ve begun that transition,
+for example we have already moved our realational database infrastructure to <a href="http://aws.amazon.com/rds/">RDS</a>.</p>
+
+<p>We&#39;ve also been cross skilling Developers and Operations staff to allow us to
+cover leave and swarm more effectively on tasks. My background is as a Developer 
+so I was looking forward to learn more about what services we could use to allow us
+to deliver faster, and more consistency. I&#39;m also on our Pager Duty rota, so I&#39;m also
+obviously very interested in services that make the operational maintenance someone
+elses problem!</p>
+
+<p>With this in mind we took most of the Software Engineering team to AWS&#39;s free
+AWSome day, which is a one day event they hold a few times a year in London, and are
+taking on tour around Europe, so we could learn what services we could be taking
+advantage of already, and what was available to look to use in future.</p>
+
+<p>The day started fairly slowly for us, being a team that are already actively using
+AWS in production most of the introductory morning sessions were covering things
+we were already familiar with on the computational and networking layers. It also
+felt a bit sales heavy, which is understandable, given it was a free event and
+many of the attendees were new to AWS. </p>
+
+<p>The afternoon sessions were much more useful and got into the meet of what we were 
+interested in, focusing on many of the managed services we don&#39;t use and there are
+a few services I think we can use, and a few potential projects for the next Hack Day.</p>
+
+<p>Archiving old data to <a href="http://aws.amazon.com/glacier/">Glacier</a> should save us a bit
+amount on storage costs. Although the savings are small, it&#39;s so easy to set up 
+automated archiving rules on a per bucket basis that there&#39;s almost no cost to
+implement archiving. </p>
+
+<p>I hadn&#39;t looked much at <a href="http://aws.amazon.com/dynamodb/">DynamoDB</a> but it does seem like it might be a good addition to
+our database infrastructure. It&#39;s a simple No-SQL key, value pair store. With each
+object limited to 400KB. One nice feature is that you can configure your required
+IOPS so it&#39;s trivial to scale. It&#39;s also comfortable with updates, and supports 
+secondary indexes. There are certainly some small, high throughput, simple data sets
+where DynamoDB sounds like it would be a better fit than Cassandra or a Relational
+Database.</p>
+
+<p>We&#39;re already looking at replacing Redis with <a href="http://aws.amazon.com/elasticache/">ElastiCache</a>, but I think we can
+also take advantage of it to cache some common requests.</p>
+
+<p>They didn&#39;t go into <a href="http://aws.amazon.com/opsworks/">OpsWorks</a> in much detail on the
+day but from my initial research it looks like We might/could be able to take advantage
+of it to replace hosted Chef in some areas.</p>
+
+<p>On a personal note, I&#39;m going to register for a personal AWS account and move a
+bunch of old <a href="http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html">static websites to AWS</a>
+), for a greatly reduced cost (free for a year).</p>
+
+<p>I&#39;ve also registered for the <a href="http://aws.amazon.com/summits/london/">AWS Summit</a> which
+looks to have some good hands on technical sessions. </p>
+
+    </div>
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      <li>
+        <a href="/categories#development-ref">development <span>4</span></a>
+      </li>
+      <li>
+        <a href="/categories#operations-ref">operations <span>1</span></a>
+      </li>
+      <li>
+        <a href="/categories#aws-ref">aws <span>1</span></a>
+      </li>
+      <li>
+        <a href="/categories#devops-ref">devops <span>1</span></a>
+      </li>
+    </ul>
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      <li>
+        <a href="/tags#AWS-ref">AWS <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Amazon-ref">Amazon <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Cloud-ref">Cloud <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#RDS-ref">RDS <span>1</span></a>
+      </li>
+    </ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+          <li class="prev"><a href="/posts/africa_mentorship" title="MyDrive team helping bright minds in Africa">&larr; Previous</a></li>
+
+          <li><a href="/archive">Archive</a></li>
+
+          <li class="next disabled"><a>Next &rarr;</a>
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <hr>
+      <div class="footer">
+        <p>&copy; <a href="http://mydrivesolutions.com" target="_blank">MyDrive Solutions Limited</a> 2014
+          with help from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Google Prettify -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32835100-1']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    
+  </body>
+</html>
