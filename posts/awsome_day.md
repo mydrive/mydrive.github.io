@@ -16,7 +16,7 @@ infrastructure using cloud resources, to allow portability between cloud provide
 
 More recently we've identified that we can make considerable cost and time savings
 if we start using more of the baked in AWS Managed Services and we've begun that transition,
-for example we have already moved our database infrastructure to [RDS](http://aws.amazon.com/rds/).
+for example we have already moved our realational database infrastructure to [RDS](http://aws.amazon.com/rds/).
 
 We've also been cross skilling Developers and Operations staff to allow us to
 cover leave and swarm more effectively on tasks.
@@ -41,7 +41,7 @@ Archiving old data to [Glacier](http://aws.amazon.com/glacier/) to save storage 
 an alternative to Cassandra or RDS for some simple key/value data structures,
 we're already looking at replacing Redis with [ElastiCache](http://aws.amazon.com/elasticache/), but I think we can
 also take advantage of it to cache some common requests. We might/could be able to
-replace Chef with [OpsWork](http://aws.amazon.com/opsworks/)
+replace Hosted Chef with [OpsWorks](http://aws.amazon.com/opsworks/) in some areas.
 
 On a personal note, I'm going to register for a personal AWS account and move a
 bunch of old [static websites to AWS](http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
