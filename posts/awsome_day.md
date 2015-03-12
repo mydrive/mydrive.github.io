@@ -44,6 +44,6 @@ also take advantage of it to cache some common requests. We might/could be able 
 replace Chef with [OpsWork](http://aws.amazon.com/opsworks/)
 
 On a personal note, I'm going to register for a personal AWS account and move a
-bunch of old [static websites to AWS]((http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
+bunch of old [static websites to AWS](http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
 ), for a greatly reduced cost (free for a year).
 I've also registered for the [AWS Summit](http://aws.amazon.com/summits/london/)
