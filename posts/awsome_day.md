@@ -7,6 +7,7 @@ tags: ["AWS", "Amazon", "Cloud", "RDS", "Africa", "Pair programming"]
 categories: ["development", "operations", "aws", "devops"]
 ---
 
+![AWSome Day banner](/assets/media/awsome_day.jpg)
 
 
 We make extensive use of AWS infrastructure [@MyDrive](https://twitter.com/_mydrive).
