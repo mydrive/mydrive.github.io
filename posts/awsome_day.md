@@ -48,8 +48,8 @@ implement archiving.
 I hadn't looked much at [DynamoDB](http://aws.amazon.com/dynamodb/) but it does seem like it might be a good addition to
 our database infrastructure. It's a simple No-SQL key, value pair store. With each
 object limited to 400KB. One nice feature is that you can configure your required
-IOPS so it's trivial to scale. It's also comfortable with updates, and supports
-a secondary index. There are certainly some small, high throughput, simple data sets
+IOPS so it's trivial to scale. It's also comfortable with updates, and supports 
+secondary indexes. There are certainly some small, high throughput, simple data sets
 where DynamoDB sounds like it would be a better fit than Cassandra or a Relational
 Database.
 
