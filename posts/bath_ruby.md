@@ -70,6 +70,7 @@ that we should definitely erradicate, and is
 [The Fundamental Attribution Error](http://en.wikipedia.org/wiki/Fundamental_attribution_error)
 
 It has two sides:
+
 * Companies and Organisations should strive to avoid it by using *Code of Conducts* or *Contract Clauses*.
 * Each developer should decide to **COOPERATE**
   * When using someone else's code by just trying to understand the code itself rather than complaining that the guy was an idiot or bad developer. Because you don't know which was the other guy's situation when he wrote it, and because, ultimately, everyone can have a bad day.
@@ -103,6 +104,7 @@ which maths part does that require.
 
 Sandi's talk showed two interesting programming patterns starting from the idea that she,
 as a former purely functional programmer, hates conditionals.
+
 * First was an example of the so called [Null Object Pattern](http://en.wikipedia.org/wiki/Null_Object_pattern), and how it removes the conditionals. You can see the code of this example along with her explanations [on her blog](http://www.sandimetz.com/blog/2014/12/19/suspicions-of-nil)
 * Second was an example of how Inheritance differs from Composition and how the latter can be used to remove conditionals again.
 
