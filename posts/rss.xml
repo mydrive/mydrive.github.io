@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-03-12</pubDate>
+    <pubDate>2015-03-20</pubDate>
+    <item>
+      <title>Notes on BathRuby 2015</title>
+      <link>http://engineering.mydrivesolutions.com/posts/bath_ruby</link>
+      <pubDate>2015-03-17</pubDate>
+      <description>A summary of our feelings about the 2015 BathRuby conference.</description>
+    </item>
     <item>
       <title>AWS AWSome Day</title>
       <link>http://engineering.mydrivesolutions.com/posts/awsome_day</link>
