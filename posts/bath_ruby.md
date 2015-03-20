@@ -103,7 +103,7 @@ which maths part does that require.
 
 Sandi's talk showed two interesting programming patterns starting from the idea that she,
 as a former purely functional programmer, hates conditionals.
-* First was an example of the so called [Null Object Pattern](http://en.wikipedia.org/wiki/Null_Object_pattern), and how it removes the conditionals.
+* First was an example of the so called [Null Object Pattern](http://en.wikipedia.org/wiki/Null_Object_pattern), and how it removes the conditionals. You can see the code of this example along with her explanations [on her blog](http://www.sandimetz.com/blog/2014/12/19/suspicions-of-nil)
 * Second was an example of how Inheritance differs from Composition and how the latter can be used to remove conditionals again.
 
 To wrap up, and as it was Friday, we sent a massive [Happy Friday Hug](https://twitter.com/BathRuby/status/576419163750731776) and then went for some
