@@ -109,4 +109,5 @@ as a former purely functional programmer, hates conditionals.
 To wrap up, and as it was Friday, we sent a massive [Happy Friday Hug](https://twitter.com/BathRuby/status/576419163750731776) and then went for some
 free beers and snacks that I'm sure everyone enjoyed.
 
-And that was it. We're really looking forward to 2016's edition!!
+And that was it, but before closing this post, We'd like to remark how well the
+conference was organised, We really enjoyed it and We're really looking forward to 2016's edition!!
