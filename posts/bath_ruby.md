@@ -15,7 +15,7 @@ Why? Lots of hours to enjoy learning Ruby from some of the top minds!!
 So after several hours by train and car [here we are!!](https://twitter.com/calonso/status/576330348163960832),
 we made it just in time to grab a coffee and then the talks started!
 
-### [Linda Liukas](https://twitter.com/lindaliukas)
+#### [Linda Liukas](https://twitter.com/lindaliukas)
 
 Linda showed us her [successful KickStarter project: HelloRuby](http://www.helloruby.com/), definitely a really nice idea
 to introduce kids the passion for computing and programming.
@@ -23,7 +23,7 @@ to introduce kids the passion for computing and programming.
 Her talk gave us the idea of trying following her steps and try to get out a driving related project
 using KickStarter funds. Would you like to see that happening? [Let us know!](https://twitter.com/_MyDrive)
 
-### [Ben Orenstein](https://twitter.com/r00k)
+#### [Ben Orenstein](https://twitter.com/r00k)
 
 Listening to Ben is definitely something very familiar to me as I've been following [his Robots Podcast](https://robots.thoughtbot.com/)
 for several years, but meeting him in person was awesome!! Specially because of the great talk he did.
@@ -38,7 +38,7 @@ Being n the numer of keystrokes to run the required test(s)
 
 Also he made a note on [The SOLID Principles](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29).
 
-### [Saron Yitbarek](https://twitter.com/saronyitbarek)
+#### [Saron Yitbarek](https://twitter.com/saronyitbarek)
 
 Saron's pitch was a typical story of someone who moves her career from marketing to coding and during it
 dropped some interesting ideas:
@@ -63,7 +63,7 @@ to organise [CodeClub](http://www.codenewbie.org/code-club), [TwitterChats](http
 Apart from her talk, we loved [the OpenSource Board](https://twitter.com/calonso/status/576349244421963777),
 which is one more evidence that the Ruby Community is something absolutely strong.
 
-### [Katrina Owen](https://twitter.com/kytrinyx)
+#### [Katrina Owen](https://twitter.com/kytrinyx)
 
 Katrina spoke about a very bad, and unfortunately common situation in the development world,
 that we should definitely erradicate, and is
@@ -79,7 +79,7 @@ It has two sides:
 This talk was very inspirational, even heard about [someone who wanted to become a better
 person after it ;)](https://twitter.com/iceraluk/status/576411958422945793)
 
-### [Tom Stuart](https://twitter.com/tomstuart)
+#### [Tom Stuart](https://twitter.com/tomstuart)
 
 Tom's talk was, to me, a myth killer. He basically explanied the abstraction of numbers
 from scratch to end up with:
@@ -100,7 +100,7 @@ Or
 Become somehow **FALSE**, as it all depends on which kind of programming you're up to and
 which maths part does that require.
 
-### [Sandi Metz](https://twitter.com/sandimetz)
+#### [Sandi Metz](https://twitter.com/sandimetz)
 
 Sandi's talk showed two interesting programming patterns starting from the idea that she,
 as a former purely functional programmer, hates conditionals.
