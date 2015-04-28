@@ -9,7 +9,7 @@ categories: ["development", "profiling"]
 
 A couple of weeks ago we released a feature and it's performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.
 
-To give a little bit of background I'll tell you that the feature was something really common nowadays: *Saving a bunch of time series in Cassandra*
+To give a little bit of background I'll tell you that the feature was something really common nowadays: **Saving a bunch of time series in Cassandra**
 
 ### Step 1: Look for evidences in metrics ###
 
@@ -55,7 +55,7 @@ were pointing to Cassandra everything looked crystal clear.
 
 ### Step 3: Trace queries ###
 
-There's only one thing we're doing here: *INSERT* so...
+There's only one thing we're doing here: **INSERT** so...
 
 ```
 cqlsh:carlos_test> TRACING ON
