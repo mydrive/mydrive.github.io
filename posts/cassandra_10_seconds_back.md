@@ -141,4 +141,4 @@ Quickly applied the fix and we were saving our 10 seconds per execution again.
         3. [RubyProf](https://github.com/ruby-prof/ruby-prof). Thanks all members of [RubyProf Organisation](https://github.com/ruby-prof)
     * Special thanks to [Patrick McFadin](https://twitter.com/patrickmcfadin) who we involved in this process through [a StackOverflow question](http://stackoverflow.com/questions/29302655) and he has always been helpful and offered further advice in a chat we held during Cassandra Day 2015 London.
 4. Take advantage of learning opportunities!
-    * These kind of *unexpected* situations normally push you out of your comfort zone and really tests your limits which is really good for your personal development.
+    * These kind of *unexpected* situations normally push you out of your comfort zone and really test your limits which is really good for your personal development.
