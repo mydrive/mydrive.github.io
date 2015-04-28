@@ -53,8 +53,14 @@
       <div class="_root">
         <h3 class="title"><a href="/archive">Archive</a> <span class="date"></span></h3>
 
-        <div class="summary">
+        <div class="summary ellipsis">
   <h2>2015</h2>
+    <h3>April</h3>
+    <ul>
+      <li>
+<span>2015-04-27</span> » <a href="/posts/cassandra_10_seconds_back">Claim your 10 seconds back!</a>
+</li>
+    </ul>
     <h3>March</h3>
     <ul>
       <li>
@@ -62,6 +68,9 @@
 </li>
       <li>
 <span>2015-03-12</span> » <a href="/posts/awsome_day">AWS AWSome Day</a>
+</li>
+      <li>
+<span>2015-03-09</span> » <a href="/posts/kanban_task_switching">Calculating the cost of task switching: why we use Kanban here at MyDrive.</a>
 </li>
     </ul>
     <h3>February</h3>
@@ -79,22 +88,6 @@
 <span>2015-01-29</span> » <a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a>
 </li>
     </ul>
-  <h2>2014</h2>
-    <h3>October</h3>
-    <ul>
-      <li>
-<span>2014-10-30</span> » <a href="/posts/rails-cve-2014-7818">Ruby on Rails CVE-2014-7818</a>
-</li>
-      <li>
-<span>2014-10-17</span> » <a href="/posts/security-update-2014-10-17">Security Updates (POODLE and OpenSSL)</a>
-</li>
-      <li>
-<span>2014-10-08</span> » <a href="/posts/swift_data_collection">iOS Device Motion Data Collection Using Swift</a>
-</li>
-      <li>
-<span>2014-10-07</span> » <a href="/posts/shellshock">Shellshock - MyDrive's Actions</a>
-</li>
-    </ul>
 </div>
 
         <div class="more">
@@ -107,10 +100,10 @@
         <div class="summary ellipsis">
 <ul class="tag_box inline">
   <li>
-    <a href="/categories#development-ref">development <span>5</span></a>
+    <a href="/categories#development-ref">development <span>7</span></a>
   </li>
   <li>
-    <a href="/categories#programming-ref">programming <span>4</span></a>
+    <a href="/categories#programming-ref">programming <span>5</span></a>
   </li>
   <li>
     <a href="/categories#mentoring-ref">mentoring <span>1</span></a>
@@ -128,7 +121,16 @@
     <a href="/categories#training-ref">training <span>1</span></a>
   </li>
   <li>
+    <a href="/categories#profiling-ref">profiling <span>1</span></a>
+  </li>
+  <li>
     <a href="/categories#security-ref">security <span>4</span></a>
+  </li>
+  <li>
+    <a href="/categories#continuous%20improvement-ref">continuous improvement <span>1</span></a>
+  </li>
+  <li>
+    <a href="/categories#kanban-ref">kanban <span>1</span></a>
   </li>
 </ul>
 </div>
@@ -141,26 +143,26 @@
         <h3 class="title"><a href="/">MyDrive Engineering</a> <span class="date"></span></h3>
 
         <div class="summary ellipsis">
-<p>UPDATE: I've just received this <a href="https://www.youtube.com/watch?v=plv1oRda0d0">Amazing Timelapse</a> of the event! (Don't miss the <a href="https://twitter.com/BathRuby/status/576419163750731776">Happy Friday Hug moment</a> and the massive movement on breaks xD)</p>
+<p>A couple of weeks ago we released a feature and it's performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.</p>
 
-<p>Friday 13, March 2015, 5.30am. My alarmclock rings. I don't feel tired but excited instead!.
-Why? Lots of hours to enjoy learning Ruby from some of the top minds!!</p>
+<p>To give a little bit of background I'll tell you that the feature was something really common nowadays: <strong>Saving a bunch of time series in Cassandra</strong></p>
 
-<p>So after several hours by train and car <a href="https://twitter.com/calonso/status/576330348163960832">here we are!!</a>,
-we made it just in time to grab a coffee and then the talks started!</p>
+<h3 id="toc_0">Step 1: Look for evidences in metrics</h3>
 
-<h3 id="toc_0"><a href="https://twitter.com/lindaliukas">Linda Liukas</a></h3>
+<p>The natural first step I think everyone does is to look at the graphs (here we use graphite) and try to find evidences of what's going on.</p>
 
-<p>Linda showed us her <a href="http://www.helloruby.com/">successful KickStarter project: HelloRuby</a>, definitely a really nice idea
-to introduce kids the passion for computing and programming.</p>
+<p>In our case we had a very clear evidence that something was wrong as the time consumed in the process had increased by around 600% after the deploy!!</p>
 
-<p>Her talk gave us the idea of trying following her steps and try to get out a driving related project
-using KickStarter funds. Would you like to see that happening? <a href="https://twitter.com/_MyDrive">Let us know!</a></p>
+<p><img src="/assets/media/events_latency_increase.png" alt="Massive time processing increase"></p>
 
-<h3 id="toc_1"><a href="https://twitter.com/r00k">Ben Orenstein</a></h3>
+<p>But that means that not only something is wrong in the feature but also, and even more scary, in our whole process!!
+How can such a poorly performing piece of code have reached production without anyone noticing it before?
+Ok, we don't have performance tests as part of our CI process, but we test every feature in our pre-production environments before going
+to production and that should have appeared there!!
+That would have simply been unacceptable and processes are easy and strong here <a href="https://twitter.com/_mydrive">@_MyDrive</a>, so,
+after scrolling a little bit along the graphs we found an explanation. The tests ran in the pre-production environment were ok!</p>
 
-<p>Listening to Ben is definitely something very familiar to me as I've been following <a href="https://robots.thoughtbot.com/">his Robots Podcast</a>
-for several years, but meeting him in person was awesome!! Specially because of the great talk he did.</p>
+<p><img src="/assets/media/events_latency_increase_with_labs.png" alt="Graph showing timing taken on pre-production"></p>
 
 </div>
 
@@ -237,10 +239,28 @@ for several years, but meeting him in person was awesome!! Specially because of 
     <a href="/tags#BathRuby-ref">BathRuby <span>1</span></a>
   </li>
   <li>
+    <a href="/tags#Cassandra-ref">Cassandra <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Performance-ref">Performance <span>1</span></a>
+  </li>
+  <li>
     <a href="/tags#security-ref">security <span>4</span></a>
   </li>
   <li>
     <a href="/tags#ghost-ref">ghost <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#kanban-ref">kanban <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#flow-ref">flow <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#task%20switching-ref">task switching <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#team%20work-ref">team work <span>1</span></a>
   </li>
   <li>
     <a href="/tags#ops-ref">ops <span>3</span></a>

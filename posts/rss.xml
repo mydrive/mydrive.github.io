@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-03-20</pubDate>
+    <pubDate>2015-04-28</pubDate>
+    <item>
+      <title>Claim your 10 seconds back!</title>
+      <link>http://engineering.mydrivesolutions.com/posts/cassandra_10_seconds_back</link>
+      <pubDate>2015-04-27</pubDate>
+      <description>The story of how we fought a performance issue in our Cassandra cluster</description>
+    </item>
     <item>
       <title>Notes on BathRuby 2015</title>
       <link>http://engineering.mydrivesolutions.com/posts/bath_ruby</link>
@@ -16,6 +22,12 @@
       <link>http://engineering.mydrivesolutions.com/posts/awsome_day</link>
       <pubDate>2015-03-12</pubDate>
       <description>Learning more about using AWS for all the things</description>
+    </item>
+    <item>
+      <title>Calculating the cost of task switching: why we use Kanban here at MyDrive.</title>
+      <link>http://engineering.mydrivesolutions.com/posts/kanban_task_switching</link>
+      <pubDate>2015-03-09</pubDate>
+      <description>Some thoughts about the detrimental effects of task switching and why Kanban is so awesome for eliminating it and maximising flow.</description>
     </item>
     <item>
       <title>MyDrive team helping bright minds in Africa</title>

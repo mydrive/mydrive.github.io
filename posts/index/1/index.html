@@ -51,6 +51,37 @@
         <div class="row-fluid">
   <div class="span12">
       <div class="posts">
+        <h3 class="title"><a href="/posts/cassandra_10_seconds_back">Claim your 10 seconds back!</a> <span class="date">2015-04-27</span></h3>
+
+        <div class="summary ellipsis">
+<p>A couple of weeks ago we released a feature and it's performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.</p>
+
+<p>To give a little bit of background I'll tell you that the feature was something really common nowadays: <strong>Saving a bunch of time series in Cassandra</strong></p>
+
+<h3 id="toc_0">Step 1: Look for evidences in metrics</h3>
+
+<p>The natural first step I think everyone does is to look at the graphs (here we use graphite) and try to find evidences of what's going on.</p>
+
+<p>In our case we had a very clear evidence that something was wrong as the time consumed in the process had increased by around 600% after the deploy!!</p>
+
+<p><img src="/assets/media/events_latency_increase.png" alt="Massive time processing increase"></p>
+
+<p>But that means that not only something is wrong in the feature but also, and even more scary, in our whole process!!
+How can such a poorly performing piece of code have reached production without anyone noticing it before?
+Ok, we don't have performance tests as part of our CI process, but we test every feature in our pre-production environments before going
+to production and that should have appeared there!!
+That would have simply been unacceptable and processes are easy and strong here <a href="https://twitter.com/_mydrive">@_MyDrive</a>, so,
+after scrolling a little bit along the graphs we found an explanation. The tests ran in the pre-production environment were ok!</p>
+
+<p><img src="/assets/media/events_latency_increase_with_labs.png" alt="Graph showing timing taken on pre-production"></p>
+
+</div>
+
+        <div class="more">
+          <a href="/posts/cassandra_10_seconds_back" class="btn btn-small">read more..</a>
+        </div>
+      </div>
+      <div class="posts">
         <h3 class="title"><a href="/posts/bath_ruby">Notes on BathRuby 2015</a> <span class="date">2015-03-17</span></h3>
 
         <div class="summary ellipsis">
@@ -62,7 +93,7 @@ Why? Lots of hours to enjoy learning Ruby from some of the top minds!!</p>
 <p>So after several hours by train and car <a href="https://twitter.com/calonso/status/576330348163960832">here we are!!</a>,
 we made it just in time to grab a coffee and then the talks started!</p>
 
-<h3 id="toc_0"><a href="https://twitter.com/lindaliukas">Linda Liukas</a></h3>
+<h4 id="toc_0"><a href="https://twitter.com/lindaliukas">Linda Liukas</a></h4>
 
 <p>Linda showed us her <a href="http://www.helloruby.com/">successful KickStarter project: HelloRuby</a>, definitely a really nice idea
 to introduce kids the passion for computing and programming.</p>
@@ -70,7 +101,7 @@ to introduce kids the passion for computing and programming.</p>
 <p>Her talk gave us the idea of trying following her steps and try to get out a driving related project
 using KickStarter funds. Would you like to see that happening? <a href="https://twitter.com/_MyDrive">Let us know!</a></p>
 
-<h3 id="toc_1"><a href="https://twitter.com/r00k">Ben Orenstein</a></h3>
+<h4 id="toc_1"><a href="https://twitter.com/r00k">Ben Orenstein</a></h4>
 
 <p>Listening to Ben is definitely something very familiar to me as I've been following <a href="https://robots.thoughtbot.com/">his Robots Podcast</a>
 for several years, but meeting him in person was awesome!! Specially because of the great talk he did.</p>
@@ -113,6 +144,38 @@ advantage of already, and what was available to look to use in future.</p>
         </div>
       </div>
       <div class="posts">
+        <h3 class="title"><a href="/posts/kanban_task_switching">Calculating the cost of task switching: why we use Kanban here at MyDrive.</a> <span class="date">2015-03-09</span></h3>
+
+        <div class="summary ellipsis">
+<p>The aim of this post is to suggest that task switching is cognitively expensive and that Kanban as an agile methodology
+lends itself to reducing the cost of task switching.</p>
+
+<p>The approach to work in my last job was very different from MyDrive. Coming from a Linux System Administrator background, where an ad
+hoc attitude was taken to the work I was given, I had to adapt to the work-on-one-thing-at-a-time mentalility
+here which has some transformational benefits by comparison.</p>
+
+<p>Luckily for me, the team here is incredibly proactive and are always willing to educate and improve on
+how we work as a unit. We have already had detailed sessions on Kanban (today's session inspired this
+post) which have highlighted the methodological limitations of my habits. A really great game that we played today
+which illustrates the value of Kanban can be found here: <a href="https://darynholmes.wordpress.com/2011/08/02/the-x-penny-game/">https://darynholmes.wordpress.com/2011/08/02/the-x-penny-game/</a>.
+I am convinced that the quality of your work is very much dependpent on your ability to focus on one thing
+at a time and less about how brilliant you are at any given thing.</p>
+
+<p>Kanban is a way of viewing and carrying out ongoing streams of work. The principals of Kanban are:</p>
+
+<ol>
+<li>Start with existing process;</li>
+<li>Agree to pursue incremental, evolutionary change;</li>
+<li>Respect the current process, roles, responsibilities and titles; and</li>
+<li>Leadership at all levels.</li>
+</ol>
+</div>
+
+        <div class="more">
+          <a href="/posts/kanban_task_switching" class="btn btn-small">read more..</a>
+        </div>
+      </div>
+      <div class="posts">
         <h3 class="title"><a href="/posts/africa_mentorship">MyDrive team helping bright minds in Africa</a> <span class="date">2015-02-13</span></h3>
 
         <div class="summary ellipsis">
@@ -146,74 +209,12 @@ is working great!</p>
           <a href="/posts/africa_mentorship" class="btn btn-small">read more..</a>
         </div>
       </div>
-      <div class="posts">
-        <h3 class="title"><a href="/posts/ghost">GHOST CVE-2015-0235</a> <span class="date">2015-02-02</span></h3>
-
-        <div class="summary">
-<p>Last week saw the first brand-name bug of 2015 in the shape of GHOST
-<a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-0235">CVE</a>,
-<a href="http://ma.ttias.be/ghost-critical-glibc-update-cve-2015-0235-gethostbyname-calls/">Explanation</a>.</p>
-
-<p>Using our automated config management tools (Chef) we patched all systems
-operated by MyDrive within 24 hours of a patch being made available by our
-operating system vendor, and then performed a rolling reboot of all systems as
-a precautionary measure to ensure all services were using the patched library.
-This was all completed by noon UTC on Weds 28th Jan 2015.</p>
-
-<p>MyDrive Solutions' operational staff closely monitor security disclosure
-announcements, and patched all systems immediately when patches were issued by
-our operating system vendor. Our automated configuration management tools
-allow us to apply security patches such as this across our entire
-infrastructure in moments.</p>
-
-<p>We continue to proactively monitor our suppliers and vendors for issues
-arising from security announcements.</p>
-
-<p>We do not believe any action is required from our customers.</p>
-</div>
-
-        <div class="more">
-          <a href="/posts/ghost" class="btn btn-small">read more..</a>
-        </div>
-      </div>
-      <div class="posts">
-        <h3 class="title"><a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a> <span class="date">2015-01-29</span></h3>
-
-        <div class="summary ellipsis">
-<p>Multi-Threading programming is one of those things that I like doing from time
-to time. I find it particularly useful when automating any task that involves
-network downloading.</p>
-
-<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby's
-<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
-
-<p>Sometimes I build it using several stages, i.e. last time I used it I was building
-a tool for downloading and processing a whole S3 bucket and I designed it with
-two messaging layers. First one publishes object names within the bucket
-for the second one to pick them and actually download and process them and finally
-publish the results for an aggregator thread (the main program's thread).</p>
-
-<p><img src="/assets/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
-
-<p>My programming approach to this is leveraging all synchronisation in queues rather
-than waiting for threads or passing messages between them.
-But don't worry, that's not a crazy or hacky approach at all, is just the Ruby's
-recommended way.</p>
-
-<p>So, what I'm going to do here is just explain by an example how to properly do
-it avoiding errors and obtaining a clean end. Let's start off by showing a
-failing example.</p>
-</div>
-
-        <div class="more">
-          <a href="/posts/ruby_thread_sync" class="btn btn-small">read more..</a>
-        </div>
-      </div>
     
     <div class="pagination">
       <ul>
           <li class="active"><a href="/posts/index/1">1</a></li>
           <li><a href="/posts/index/2">2</a></li>
+          <li><a href="/posts/index/3">3</a></li>
       </ul>
     </div>
   </div>

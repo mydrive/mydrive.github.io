@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Claim your 10 seconds back!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The story of how we fought a performance issue in our Cassandra cluster">
+    <meta name="author" content="MyDrive Solutions">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-88238289010db19359d2181e634e95cd.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-e81fa375b231bedf6cb2dbc6653570cc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/google_prettify/sons-of-obsidian-afb0925bfa2d994f17dab93e13fbf999.css' type='text/css' rel='stylesheet' media='all'>
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  <link rel="shortcut icon" href="/assets/media/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">MyDrive Engineering</a>
+          <ul class="nav">
+              
+                <li><a href="/archive">Archive</a></li>
+              
+              
+                <li><a href="/tags">Tags</a></li>
+              
+              
+                <li><a href="/categories">Categories</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+          by <strong>Carlos Alonso Perez</strong>
+  <p>Software Engineer</p>
+  <p><a href="https://twitter.com/calonso" target="_blank">@calonso</a></p>
+
+<div class="page-header">
+  <h1>Claim your 10 seconds back! </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>2015-04-27</strong>
+    </div>
+    <div class="content">
+      <p>A couple of weeks ago we released a feature and it&#39;s performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.</p>
+
+<p>To give a little bit of background I&#39;ll tell you that the feature was something really common nowadays: <strong>Saving a bunch of time series in Cassandra</strong></p>
+
+<h3 id="toc_0">Step 1: Look for evidences in metrics</h3>
+
+<p>The natural first step I think everyone does is to look at the graphs (here we use graphite) and try to find evidences of what&#39;s going on.</p>
+
+<p>In our case we had a very clear evidence that something was wrong as the time consumed in the process had increased by around 600% after the deploy!!</p>
+
+<p><img src="/assets/media/events_latency_increase.png" alt="Massive time processing increase"></p>
+
+<p>But that means that not only something is wrong in the feature but also, and even more scary, in our whole process!!
+How can such a poorly performing piece of code have reached production without anyone noticing it before?
+Ok, we don&#39;t have performance tests as part of our CI process, but we test every feature in our pre-production environments before going
+to production and that should have appeared there!!
+That would have simply been unacceptable and processes are easy and strong here <a href="https://twitter.com/_mydrive">@_MyDrive</a>, so,
+after scrolling a little bit along the graphs we found an explanation. The tests ran in the pre-production environment were ok!</p>
+
+<p><img src="/assets/media/events_latency_increase_with_labs.png" alt="Graph showing timing taken on pre-production"></p>
+
+<p>Ok, so we have somewhere to look at: something on our production environment is performing poorly and, at first glance, our stats are not showing it at all!.</p>
+
+<h3 id="toc_1">Step 2: Profile suspicious code</h3>
+
+<p>At this step we use the fantastic <a href="https://github.com/ruby-prof/ruby-prof">RubyProf</a> to wrap the suspicious code in a <code>RubyProf.profile</code> block and save the
+results to analyse later.</p>
+
+<pre><code>require &#39;rubyprof&#39;
+
+results = RubyProf.profile do
+  [Code to profile]
+end
+
+printer = RubyProf::GraphPrinter.new results
+printer.print(File.new(&#39;/tmp/profiled-events-insert.txt&#39;, &#39;w&#39;), min_percent: 2)
+</code></pre>
+
+<p>Reading the saved files I could clearly see that the time was going into the Cassandra related stuff
+and made the assumption that the problem would be somewhere in the model/queries stuff.</p>
+
+<p>I could have read a little more of the profiling result and will probably have saved some steps here, but
+as we were issuing several thousands of inserts asynchronously and the first lines of the profiling report
+were pointing to Cassandra everything looked crystal clear.</p>
+
+<h3 id="toc_2">Step 3: Trace queries</h3>
+
+<p>There&#39;s only one thing we&#39;re doing here: <strong>INSERT</strong> so...</p>
+
+<pre><code>cqlsh:carlos_test&gt; TRACING ON
+cqlsh:carlos_test&gt; INSERT INTO ...
+
+ activity                         | timestamp    | source       | source_elapsed
+----------------------------------+--------------+--------------+----------------
+               execute_cql3_query | 10:26:35,809 | 10.36.136.42 |              0
+          Parsing INSERT INTO ... | 10:26:35,836 | 10.36.136.42 |          26221
+              Preparing statement | 10:26:35,847 | 10.36.136.42 |          37556
+Determining replicas for mutation | 10:26:35,847 | 10.36.136.42 |          37867
+   Acquiring switchLock read lock | 10:26:35,848 | 10.36.136.42 |          38492
+           Appending to commitlog | 10:26:35,848 | 10.36.136.42 |          38558
+        Adding to events memtable | 10:26:35,848 | 10.36.136.42 |          38600
+                 Request complete | 10:26:35,847 | 10.36.136.42 |          38926
+</code></pre>
+
+<p>Looking at this results something looks broken on parsing the query, and running the
+same thing on our pre-production environment it clearly shows as something broken!</p>
+
+<pre><code>cqlsh:benchmark&gt; TRACING ON
+cqlsh:benchmark&gt; INSERT INTO ...
+
+ activity                         | timestamp    | source        | source_elapsed
+----------------------------------+--------------+---------------+----------------
+               execute_cql3_query | 10:27:40,390 | 10.36.168.248 |              0
+          Parsing INSERT INTO ... | 10:27:40,390 | 10.36.168.248 |             75
+              Preparing statement | 10:27:40,390 | 10.36.168.248 |            233
+Determining replicas for mutation | 10:27:40,390 | 10.36.168.248 |            615
+   Acquiring switchLock read lock | 10:27:40,390 | 10.36.168.248 |            793
+           Appending to commitlog | 10:27:40,390 | 10.36.168.248 |            827
+        Adding to events memtable | 10:27:40,390 | 10.36.168.248 |            879
+                 Request complete | 10:27:40,391 | 10.36.168.248 |           1099
+</code></pre>
+
+<p>But, what could be so wrong with parsing a query?</p>
+
+<h3 id="toc_3">Step 4: Simplify the problem</h3>
+
+<p>At this point I decided to write <a href="https://gist.github.com/calonso/a26da8aa23f88e59abf4">a small Ruby program</a> that:</p>
+
+<ol>
+<li>Connects to the Cassandra cluster</li>
+<li>Creates a test keyspace</li>
+<li>Creates a column family within the test keyspace</li>
+<li>Runs an insert like the one profiled above</li>
+<li>Drop the test keyspace</li>
+</ol>
+
+<p>and profile it all using <code>RubyProf</code> to try to spot something obvious.</p>
+
+<p>Running this script in production showed something useful, more than 98% of the time was spent in <code>Cluster#connect</code> method!
+Furthermore, almost 100% of the time inside that method was going to <code>IO.select</code>! Which means that the time is being wasted
+outside Ruby itself.</p>
+
+<p>Actually I could have saved some time, because this exact same thing was also clear in the first profiling I did in step 1,
+but my premature assumption made me walk some extra unnecessary steps.</p>
+
+<p>Ok, we have a new symptom, but no idea where to look at, so after some desperate and useless attempts like
+tcpdumping the communications between the client and the cluster I decided to go back to the script I wrote and...</p>
+
+<h3 id="toc_4">Step 5: Enable Logging</h3>
+
+<p>Maybe this should have been the first, right?</p>
+
+<p>But this was really revealing!, for some reason, the driver was trying to connect to four nodes when in our ring
+we only have three!! Of course, the connection to this extra node was failing on timeout (10 seconds) and that
+was the source of our poor performance!</p>
+
+<p>A quick google with the symptoms as the query and ... ta-dah!! We&#39;re facing <a href="https://issues.apache.org/jira/browse/CASSANDRA-6053">a Cassandra bug</a>!!</p>
+
+<p>Quickly applied the fix and we were saving our 10 seconds per execution again.</p>
+
+<h3 id="toc_5">Conclusions</h3>
+
+<ol>
+<li>Measure everything
+
+<ul>
+<li>Metrics and monitoring let us know we were facing an unexpected performance issue</li>
+</ul></li>
+<li>Keep calm, read to the end
+
+<ul>
+<li>On first profiling report I could have spotted that the issue was on <code>Cluster#connect</code> but due to my eagerness to find a fix I made a wrong assumption that meant more time.</li>
+</ul></li>
+<li>Thank the community
+
+<ul>
+<li>Thanks to the community we have great tools such as:
+
+<ol>
+<li><a href="http://cassandra.apache.org/">Cassandra</a>. Thanks <a href="https://www.apache.org/">Apache</a> and <a href="http://www.datastax.com/">DataStax</a></li>
+<li><a href="http://graphite.wikidot.com/">Graphite</a>. Thanks everyone who made it possible.</li>
+<li><a href="https://github.com/ruby-prof/ruby-prof">RubyProf</a>. Thanks all members of <a href="https://github.com/ruby-prof">RubyProf Organisation</a></li>
+</ol></li>
+<li>Special thanks to <a href="https://twitter.com/patrickmcfadin">Patrick McFadin</a> who we involved in this process through <a href="http://stackoverflow.com/questions/29302655">a StackOverflow question</a> and he has always been helpful and offered further advice in a chat we held during Cassandra Day 2015 London.</li>
+</ul></li>
+<li>Take advantage of learning opportunities!
+
+<ul>
+<li>These kind of <em>unexpected</em> situations normally push you out of your comfort zone and really test your limits which is really good for your personal development.</li>
+</ul></li>
+</ol>
+
+    </div>
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      <li>
+        <a href="/categories#development-ref">development <span>7</span></a>
+      </li>
+      <li>
+        <a href="/categories#profiling-ref">profiling <span>1</span></a>
+      </li>
+    </ul>
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      <li>
+        <a href="/tags#Cassandra-ref">Cassandra <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Performance-ref">Performance <span>1</span></a>
+      </li>
+    </ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+          <li class="prev"><a href="/posts/bath_ruby" title="Notes on BathRuby 2015">&larr; Previous</a></li>
+
+          <li><a href="/archive">Archive</a></li>
+
+          <li class="next disabled"><a>Next &rarr;</a>
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <hr>
+      <div class="footer">
+        <p>&copy; <a href="http://mydrivesolutions.com" target="_blank">MyDrive Solutions Limited</a> 2014
+          with help from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Google Prettify -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32835100-1']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    
+  </body>
+</html>
