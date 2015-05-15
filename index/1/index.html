@@ -55,6 +55,12 @@
 
         <div class="summary ellipsis">
   <h2>2015</h2>
+    <h3>May</h3>
+    <ul>
+      <li>
+<span>2015-05-14</span> » <a href="/posts/cassandra_models_benchmarking">Benchmarking Cassandra models</a>
+</li>
+    </ul>
     <h3>April</h3>
     <ul>
       <li>
@@ -82,12 +88,6 @@
 <span>2015-02-02</span> » <a href="/posts/ghost">GHOST CVE-2015-0235</a>
 </li>
     </ul>
-    <h3>January</h3>
-    <ul>
-      <li>
-<span>2015-01-29</span> » <a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a>
-</li>
-    </ul>
 </div>
 
         <div class="more">
@@ -100,7 +100,7 @@
         <div class="summary ellipsis">
 <ul class="tag_box inline">
   <li>
-    <a href="/categories#development-ref">development <span>7</span></a>
+    <a href="/categories#development-ref">development <span>8</span></a>
   </li>
   <li>
     <a href="/categories#programming-ref">programming <span>5</span></a>
@@ -121,7 +121,10 @@
     <a href="/categories#training-ref">training <span>1</span></a>
   </li>
   <li>
-    <a href="/categories#profiling-ref">profiling <span>1</span></a>
+    <a href="/categories#profiling-ref">profiling <span>2</span></a>
+  </li>
+  <li>
+    <a href="/categories#data%20modelling-ref">data modelling <span>1</span></a>
   </li>
   <li>
     <a href="/categories#security-ref">security <span>4</span></a>
@@ -143,27 +146,55 @@
         <h3 class="title"><a href="/">MyDrive Engineering</a> <span class="date"></span></h3>
 
         <div class="summary ellipsis">
-<p>A couple of weeks ago we released a feature and it's performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.</p>
+<p>During the last couple of weeks we've been very focused on deeply understanding Cassandra's
+write and read paths to build our models the best possible way.</p>
 
-<p>To give a little bit of background I'll tell you that the feature was something really common nowadays: <strong>Saving a bunch of time series in Cassandra</strong></p>
+<p>After so much investigation I can summarize which are the steps we follow to assess our
+model's performance.</p>
 
-<h3 id="toc_0">Step 1: Look for evidences in metrics</h3>
+<h3 id="toc_0">1. Have good practices and anti-patterns always in mind.</h3>
 
-<p>The natural first step I think everyone does is to look at the graphs (here we use graphite) and try to find evidences of what's going on.</p>
+<p>Cassandra is known to be a very resilient and highly performant platform, but
+only so long as you follow the rules and work with the underlying data model.</p>
 
-<p>In our case we had a very clear evidence that something was wrong as the time consumed in the process had increased by around 600% after the deploy!!</p>
+<p>There are quite a few of these rules so my recommendation is to read through them
+quickly before thinking of your model.</p>
 
-<p><img src="/assets/media/events_latency_increase.png" alt="Massive time processing increase"></p>
+<p>There are lots of places online where you can read about the good practices to follow
+and anti-patterns to avoid when data modelling for Cassandra but I have my own
+repository, here are the links:</p>
 
-<p>But that means that not only something is wrong in the feature but also, and even more scary, in our whole process!!
-How can such a poorly performing piece of code have reached production without anyone noticing it before?
-Ok, we don't have performance tests as part of our CI process, but we test every feature in our pre-production environments before going
-to production and that should have appeared there!!
-That would have simply been unacceptable and processes are easy and strong here <a href="https://twitter.com/_mydrive">@_MyDrive</a>, so,
-after scrolling a little bit along the graphs we found an explanation. The tests ran in the pre-production environment were ok!</p>
+<ul>
+<li>
+<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014/">16 Notes on Cassandra Summit</a>
 
-<p><img src="/assets/media/events_latency_increase_with_labs.png" alt="Graph showing timing taken on pre-production"></p>
+<ul>
+<li>Collection of good practices given by <a href="https://twitter.com/patrickmcfadin">Patrick McFadin</a> at last Cassandra Summit EU (2014)</li>
+</ul>
+</li>
+<li>
+<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014-part-ii/">16 Notes on Cassandra Summit (II)</a>
 
+<ul>
+<li>Collection of some more good practices and brand new features to consider. Again from Cassandra Summit EU 2014</li>
+</ul>
+</li>
+<li>
+<a href="http://mrcalonso.com/cassandra-day-london-2015-2/">Cassandra Day London 2015</a>
+
+<ul>
+<li>Collection of some use cases and a very interesting anti-patterns list by <a href="https://twitter.com/chbatey">Christopher Batey</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="http://patrickmcfadin.com/2014/02/05/getting-started-with-time-series-data-modeling/">Getting Started with Cassandra Time Series data modelling</a>
+
+<ul>
+<li>Three different patterns you can follow when using Cassandra to store time series</li>
+</ul>
+</li>
+</ul>
 </div>
 
         <div class="more">
@@ -239,10 +270,16 @@ after scrolling a little bit along the graphs we found an explanation. The tests
     <a href="/tags#BathRuby-ref">BathRuby <span>1</span></a>
   </li>
   <li>
-    <a href="/tags#Cassandra-ref">Cassandra <span>1</span></a>
+    <a href="/tags#Cassandra-ref">Cassandra <span>2</span></a>
   </li>
   <li>
-    <a href="/tags#Performance-ref">Performance <span>1</span></a>
+    <a href="/tags#Performance-ref">Performance <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#DataModelling-ref">DataModelling <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Benchmarking-ref">Benchmarking <span>1</span></a>
   </li>
   <li>
     <a href="/tags#security-ref">security <span>4</span></a>

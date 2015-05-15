@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-04-28</pubDate>
+    <pubDate>2015-05-15</pubDate>
+    <item>
+      <title>Benchmarking Cassandra models</title>
+      <link>http://engineering.mydrivesolutions.com/posts/cassandra_models_benchmarking</link>
+      <pubDate>2015-05-14</pubDate>
+      <description>An example of how we benchmark our Cassandra models before deploying them</description>
+    </item>
     <item>
       <title>Claim your 10 seconds back!</title>
       <link>http://engineering.mydrivesolutions.com/posts/cassandra_10_seconds_back</link>

@@ -4,12 +4,16 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-04-28</pubDate>
+    <pubDate>2015-05-15</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
   &lt;h2&gt;2015&lt;/h2&gt;
+    &lt;h3&gt;May&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-05-14&lt;/span&gt; &amp;raquo; &lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
     &lt;h3&gt;April&lt;/h3&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;span&gt;2015-04-27&lt;/span&gt; &amp;raquo; &lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
@@ -45,7 +49,7 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;7&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;8&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;5&lt;/span&gt;&lt;/a&gt;
@@ -66,7 +70,10 @@
     &lt;a href="/categories#training-ref"&gt;training &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#profiling-ref"&gt;profiling &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#profiling-ref"&gt;profiling &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#data modelling-ref"&gt;data modelling &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
@@ -79,12 +86,13 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;h3&gt;development (7)&lt;/h3&gt;
+  &lt;h3&gt;development (8)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/bath_ruby"&gt;Notes on BathRuby 2015&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/kanban_task_switching"&gt;Calculating the cost of task switching: why we use Kanban here at MyDrive.&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
@@ -117,9 +125,14 @@
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/bath_ruby"&gt;Notes on BathRuby 2015&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;profiling (1)&lt;/h3&gt;
+  &lt;h3&gt;profiling (2)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;data modelling (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;security (4)&lt;/h3&gt;
   &lt;ul&gt;
@@ -208,10 +221,16 @@
     &lt;a href="/tags#BathRuby-ref"&gt;BathRuby &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/tags#Performance-ref"&gt;Performance &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#Performance-ref"&gt;Performance &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#DataModelling-ref"&gt;DataModelling &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Benchmarking-ref"&gt;Benchmarking &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
@@ -306,8 +325,14 @@
     &lt;li&gt;&lt;a href="/posts/bath_ruby"&gt;Notes on BathRuby 2015&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Cassandra-ref"&gt;Cassandra&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Performance-ref"&gt;Performance&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="DataModelling-ref"&gt;DataModelling&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Benchmarking-ref"&gt;Benchmarking&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;

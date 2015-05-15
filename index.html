@@ -56,6 +56,65 @@
 <div class="row-fluid">
   <div class="span12">
     <div class="post">
+  <h3 class="title"><a href="/posts/cassandra_models_benchmarking">Benchmarking Cassandra models</a> <span class="date">2015-05-14</span></h3>
+
+  <div class="summary ellipsis">
+<p>During the last couple of weeks we've been very focused on deeply understanding Cassandra's
+write and read paths to build our models the best possible way.</p>
+
+<p>After so much investigation I can summarize which are the steps we follow to assess our
+model's performance.</p>
+
+<h3 id="toc_0">1. Have good practices and anti-patterns always in mind.</h3>
+
+<p>Cassandra is known to be a very resilient and highly performant platform, but
+only so long as you follow the rules and work with the underlying data model.</p>
+
+<p>There are quite a few of these rules so my recommendation is to read through them
+quickly before thinking of your model.</p>
+
+<p>There are lots of places online where you can read about the good practices to follow
+and anti-patterns to avoid when data modelling for Cassandra but I have my own
+repository, here are the links:</p>
+
+<ul>
+<li>
+<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014/">16 Notes on Cassandra Summit</a>
+
+<ul>
+<li>Collection of good practices given by <a href="https://twitter.com/patrickmcfadin">Patrick McFadin</a> at last Cassandra Summit EU (2014)</li>
+</ul>
+</li>
+<li>
+<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014-part-ii/">16 Notes on Cassandra Summit (II)</a>
+
+<ul>
+<li>Collection of some more good practices and brand new features to consider. Again from Cassandra Summit EU 2014</li>
+</ul>
+</li>
+<li>
+<a href="http://mrcalonso.com/cassandra-day-london-2015-2/">Cassandra Day London 2015</a>
+
+<ul>
+<li>Collection of some use cases and a very interesting anti-patterns list by <a href="https://twitter.com/chbatey">Christopher Batey</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="http://patrickmcfadin.com/2014/02/05/getting-started-with-time-series-data-modeling/">Getting Started with Cassandra Time Series data modelling</a>
+
+<ul>
+<li>Three different patterns you can follow when using Cassandra to store time series</li>
+</ul>
+</li>
+</ul>
+</div>
+
+  <div class="more">
+    <a href="/posts/cassandra_models_benchmarking" class="btn btn-small">read more..</a>
+  </div>
+</div>
+<div class="post">
   <h3 class="title"><a href="/posts/cassandra_10_seconds_back">Claim your 10 seconds back!</a> <span class="date">2015-04-27</span></h3>
 
   <div class="summary ellipsis">
@@ -178,40 +237,6 @@ at a time and less about how brilliant you are at any given thing.</p>
 
   <div class="more">
     <a href="/posts/kanban_task_switching" class="btn btn-small">read more..</a>
-  </div>
-</div>
-<div class="post">
-  <h3 class="title"><a href="/posts/africa_mentorship">MyDrive team helping bright minds in Africa</a> <span class="date">2015-02-13</span></h3>
-
-  <div class="summary ellipsis">
-<p>Here <a href="https://twitter.com/_mydrive">@MyDrive</a> we are aware that not everyone in
-the world has the same possibilities of studying or sharpening their skills to
-be more competent in the professional environment.</p>
-
-<p>That's even more unfair when we focus on development/coding, mostly because of the
-global nature Internet gives to our professional environment.</p>
-
-<p>Luckily <a href="https://twitter.com/hackhands">@HackHands</a> guys came with a really nice
-program. A special <strong>Africa Mentorship Program</strong> consisting on low-cost, remote pair
-programming sessions for mentees enrolled in the program.</p>
-
-<p>Mentees can pick their favourite subject among a wide range of useful and carefully
-picked technologies like <em>Ruby on Rails</em>, <em>Python</em> or <em>JavaScript (MEAN stack)</em>,
-then they are assigned a mentor and learning starts! (as far as Internet connectivity
-allows it, of course :))</p>
-
-<p>Personally I'm finding it very rewarding and easy. My mentee is a really smart and
-enthusiastic girl that, when we had our first pairing session, she already had a lot
-of important concepts well understood. Our strategy therefore is that she goes through
-the <a href="https://www.railstutorial.org/book">Rails Tutorial Book</a> by
-<a href="https://twitter.com/mhartl">@Michael Hartl</a> on her own and when she feels stuck
-or she has compiled a fair amount of questions then we schedule a new pairing
-session of, normally, less than an hour to unblock her and we both think that this
-is working great!</p>
-</div>
-
-  <div class="more">
-    <a href="/posts/africa_mentorship" class="btn btn-small">read more..</a>
   </div>
 </div>
 
