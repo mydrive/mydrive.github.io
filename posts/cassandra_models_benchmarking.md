@@ -15,8 +15,8 @@ model's performance.
 
 ### 1. Have good practices and anti-patterns always in mind.
 
-Cassandra is known to be a very resilient and highly performant platform, but it will
-as long as you follow the rules.
+Cassandra is known to be a very resilient and highly performant platform, but
+only so long as you follow the rules and work with the underlying data model.
 
 There are quite a few of these rules so my recommendation is to read through them
 quickly before thinking of your model.
@@ -45,7 +45,7 @@ or the other is a better choice.
 
 Here I'll provide two examples we've recently had:
 
-1. Having a bucketed time series with a maximum of 86.400 rows per partition, how is it better to read an entire partition?
+1. Having a bucketed time series with a maximum of 86,400 rows per partition, how is it better to read an entire partition?
     a) By reading the whole partition at once
     b) By reading the whole partition in chunks (2 halves, 4 quarters, ...)
 2. Having a model that contains the information of a discretised distribution on each record, how is it better to save the bins?
@@ -53,7 +53,7 @@ Here I'll provide two examples we've recently had:
     b) By having 100 columns, one for each bin
 
 The resulting models will meet all the good practices and avoid all the anti-patterns regardless
-of the final decission so, how do you decide which way to go?
+of the final decision so, how do you decide which way to go?
 
 ### 3. Benchmark your alternatives
 
