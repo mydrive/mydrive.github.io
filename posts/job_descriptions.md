@@ -65,15 +65,19 @@ thinking at the time that that statement was great. It's not allowed, or tolerat
 there is an understanding that some remote working is actually beneficial, both to
 individuals and to the company, and the tools are in place to make it easy.
 
-Three of the next most popular with 4 votes each were related to learning and
+Three of the next most popular with 4/5 votes each were related to learning and
 personal development, which I think again is a reflection on the kind of
 developers we want to attract. We want passionate enthusiasts with opinions
 about what we should be doing now, and in a few years.
 
-If you are an iOS developer and this sounds good, please get in touch (email?).
+If you are an iOS developer and this sounds good, please get in touch.
 The test is on our [github](https://github.com/mydrive/code-tests) if you fancy
 having a go. It's an interesting problem which you can actually tackle in any language.
 
 We're also constantly on the look out for good developers, in production we primarily
 have Ruby but we definitely believe that Software Engineering is a skill, great
 developers know and learn other languages quickly. So please get in touch.
+
+[MyDrive on LinkedIn](https://www.linkedin.com/company/mydrive-solutions-limited) [@MyDrive on Twitter](https://twitter.com/_mydrive)
+
+[![Mike](https://en.gravatar.com/userimage/86388238/cda22af9d9be6448f21aca3e31877240?s=40) Mike @mheffera on Twitter](https://twitter.com/mheffera)
