@@ -38,7 +38,7 @@ is a more challenging process including a test, and hopefully that's just filter
 out people who aren't suitable for the role, but we could be putting off some
 candidates who really would be great because we've increased the barrier to apply.
 
-All of this caused us to review our Job Descriptions. We quickly realised
+All of this caused us to review our job descriptions. We quickly realised
 that just tweaking wording maybe wasn't radical enough. There was also a feeling
 that one of the best things about working at [@MyDrive](https://twitter.com/_mydrive) is the working culture
 which wasn't well reflected in the job descriptions.
