@@ -61,9 +61,10 @@ our list were the most important, so we could focus on those in our adverts.
 
 The biggest winner was Remote Working Encouraged, which is really interesting. My
 offer letter contained the phrase "some remote working encouraged", and I remember
-thinking at the time that that statement was great. It's not allowed, or tolerated,
-there is an understanding that some remote working is actually beneficial, both to
-individuals and to the company, and the tools are in place to make it easy.
+thinking at the time that that statement was great. It's not described as allowed, 
+or merely tolerated at MyDrive it's encouraged. There is an understanding that some
+remote working is actually beneficial, both to individuals and to the company, and
+the tools are in place to make remote working easy. 
 
 Three of the next most popular with 4/5 votes each were related to learning and
 personal development, which I think again is a reflection on the kind of
