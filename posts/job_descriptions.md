@@ -18,7 +18,7 @@ developers out there, most of them are already in work and everyone is competing
 for them.
 
 We've recently been recruiting for an iOS developer role, to lead the development
-of our telematics apps. I think is actually a really interesting, fun role, which
+of our telematics apps. I think it's actually a really interesting, fun role, which
 will involve lots of really quite difficult tasks, really stretching the technology.
 
 Our challenge is to make sure that we can get that across in our job adverts.
