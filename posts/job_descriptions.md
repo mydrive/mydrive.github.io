@@ -51,7 +51,7 @@ We had a small brainstorming session, splitting things into two sections:
 1. What we will do for the candidate?
 2. What they will do for us?
 
-![Results](/assets/media/job_voting/categories.jpg)
+![Categories](/assets/media/job_voting/categories.jpg)
 
 
 We got two great lists, and decided to vote on which of the things we'd got on
@@ -78,6 +78,8 @@ We're also constantly on the look out for good developers, in production we prim
 have Ruby but we definitely believe that Software Engineering is a skill, great
 developers know and learn other languages quickly. So please get in touch.
 
-[MyDrive on LinkedIn](https://www.linkedin.com/company/mydrive-solutions-limited) [@MyDrive on Twitter](https://twitter.com/_mydrive)
+[MyDrive on LinkedIn](https://www.linkedin.com/company/mydrive-solutions-limited) 
 
-[![Mike](https://en.gravatar.com/userimage/86388238/cda22af9d9be6448f21aca3e31877240?s=40) Mike @mheffera on Twitter](https://twitter.com/mheffera)
+[@MyDrive on Twitter](https://twitter.com/_mydrive)
+
+[Mike - @mheffera on Twitter](https://twitter.com/mheffera)
