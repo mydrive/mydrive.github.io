@@ -4,12 +4,16 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-05-15</pubDate>
+    <pubDate>2015-06-11</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
   &lt;h2&gt;2015&lt;/h2&gt;
+    &lt;h3&gt;June&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-06-11&lt;/span&gt; &amp;raquo; &lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
     &lt;h3&gt;May&lt;/h3&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;span&gt;2015-05-14&lt;/span&gt; &amp;raquo; &lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
@@ -49,7 +53,7 @@
       <description>
 &lt;ul class="tag_box inline"&gt;
   &lt;li&gt;
-    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;8&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#development-ref"&gt;development &lt;span&gt;9&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#programming-ref"&gt;programming &lt;span&gt;5&lt;/span&gt;&lt;/a&gt;
@@ -64,7 +68,7 @@
     &lt;a href="/categories#aws-ref"&gt;aws &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#devops-ref"&gt;devops &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#devops-ref"&gt;devops &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#training-ref"&gt;training &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -86,13 +90,14 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-  &lt;h3&gt;development (8)&lt;/h3&gt;
+  &lt;h3&gt;development (9)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/bath_ruby"&gt;Notes on BathRuby 2015&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/kanban_task_switching"&gt;Calculating the cost of task switching: why we use Kanban here at MyDrive.&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/ruby_thread_sync"&gt;Ruby Thread Synchronisation&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/swift_data_collection"&gt;iOS Device Motion Data Collection Using Swift&lt;/a&gt;&lt;/li&gt;
@@ -117,9 +122,10 @@
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;devops (1)&lt;/h3&gt;
+  &lt;h3&gt;devops (2)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;training (1)&lt;/h3&gt;
   &lt;ul&gt;
@@ -239,6 +245,12 @@
     &lt;a href="/tags#ghost-ref"&gt;ghost &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;a href="/tags#recruitment-ref"&gt;recruitment &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#sweets-ref"&gt;sweets &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;a href="/tags#kanban-ref"&gt;kanban &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -340,6 +352,10 @@
     &lt;li&gt;&lt;a href="/posts/shellshock"&gt;Shellshock - MyDrive&amp;#39;s Actions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="ghost-ref"&gt;ghost&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="recruitment-ref"&gt;recruitment&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="sweets-ref"&gt;sweets&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="kanban-ref"&gt;kanban&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/kanban_task_switching"&gt;Calculating the cost of task switching: why we use Kanban here at MyDrive.&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="flow-ref"&gt;flow&lt;/h3&gt;
