@@ -59,12 +59,11 @@ our list were the most important, so we could focus on those in our adverts.
 
 ![Results](/assets/media/job_voting/results.jpg)
 
-The biggest winner was Remote Working Encouraged, which is really interesting. My
-offer letter contained the phrase "some remote working encouraged", and I remember
-thinking at the time that that statement was great. It's not described as allowed, 
-or merely tolerated at MyDrive it's encouraged. There is an understanding that some
-remote working is actually beneficial, both to individuals and to the company, and
-the tools are in place to make remote working easy. 
+The biggest winner was about the Remote Working policy, which is really interesting.
+I think this reflects the way people want to work these days. Remote working is 
+subject to management approval, but generally it's an extremely accommodating culture
+there is understanding at MyDrive that some remote working is beneficial, both to 
+individuals and to the company, and the tools are in place to make remote working easy. 
 
 Three of the next most popular with 4/5 votes each were related to learning and
 personal development, which I think again is a reflection on the kind of
