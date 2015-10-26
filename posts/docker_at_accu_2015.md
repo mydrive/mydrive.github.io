@@ -1,8 +1,10 @@
 ---
 title: 'Docker at ACCU 2015'
+author: gavin
 date: '2015-10-26'
 description: Docker talk at ACCU 2015 
 tags: ["devops", "docker"]
+categories: ["development", "devops"]
 ---
 
 Back in April Gavin Heavyside, MyDrive's Director of Engineering, spoke about Docker at the annual ACCU conference. MyDrive is using Docker in production for a number of services, and our use is set to grow.
