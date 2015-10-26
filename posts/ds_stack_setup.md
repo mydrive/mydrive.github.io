@@ -7,19 +7,21 @@ tags: ["Cassandra", "Spark", "DataStax Enterprise", "IPython Notebooks", "IPytho
 categories: ["devops"]
 ---
 
+# Fitting IPython Notebooks, Spark and Cassandra all together
+
 Yesterday after more than a whole week working on this I've finally managed to set all this stack up.
 
 This stack is one of the most hot and trending topics nowadays as it is very useful for BigData, specifically for data exploration purposes.
 
 My starting point was a 3 nodes Cassandra cluster, intended for analytics, data exploration and adhoc reporting. This cluster was running
-DSE (DataStax Enterprise) 4.6, which ships with Cassandra 2.0. Worths mentioning that the cluster was running in Cassandra only mode.
+DSE (DataStax Enterprise) 4.6, which ships with Cassandra 2.0. Worth mentioning that the cluster was running in Cassandra only mode.
 
 After having attended to the latest [Cassandra Summit '15](http://mrcalonso.com/notes-on-cassandra-summit-2015/), it was made clear not to use
 Spark with any Cassandra earlier than 2.1.8, because the integration was buggy. Therefore:
 
 1. Upgrade DSE to latest (4.8) version, that includes Cassandra 2.1.10.
   * Step by step instructions here: [http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html](http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html)
-2. Next step is to enable Spark on the cluster. This is one of the points where relying on something like DSE comes really helpful, as the DSE distribution comes
+2. Next step is to enable Spark on the cluster. This is one of the points where relying on something like DSE comes in handy, as the DSE distribution comes
 with a Spark installation and the Cassandra-Spark connector already configured and optimised for maximum compatbility and throughput. It is also really easy to
 enable Spark on the nodes.
   * For more information on this, head here: [http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/anaHome/anaHomeTOC.html](http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/anaHome/anaHomeTOC.html)
@@ -28,7 +30,7 @@ enable Spark on the nodes.
   2. Next step is to install [Python Virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/), as IPython depends on Python and changing the system's Python installation can be dangerous: `sudo pip install virtualenv`
   3. Then, create a folder for your installation. This folder will contain the virtual environment for the notebooks installation (ipynb in this example). `mkdir ipynb` and `cd ipynb`
   4. Create a virtual environment: `virtualenv ipython`. Where ipython is the name of the virtual environment we're creating.
-  5. To begin using the virtual environment we need to activate it: `source ipython/bin/activate`. At this point our prompt will indicate us that we're inside the `ipython` virtual env.
+  5. To begin using the virtual environment we need to activate it: `source ipython/bin/activate`. At this point our prompt will indicate that we're inside the `ipython` virtual env.
   6. Install all IPython's dependencies (using pip): `pip install uwsgi numpy freetype-py pillow scipy python-dateutil pytz six scikit-learn pandas matplotlib pygments readline nose pexpect cython networkx numexpr tables patsy statsmodels sympy scikit-image theano xlrd xlwt ipython[notebook]`
 4. Let's create a IPython default profile (we'll not use it, but it's safe to create it to avoid bugs and strange issues)
   * `./ipython/bin/ipython profile create --profile=default --ipython-dir .ipython`
@@ -36,7 +38,7 @@ enable Spark on the nodes.
   * `./ipython/bin/ipython profile create --profile=pyspark --ipython-dir .ipython`
 6. Now install MathJax extension:
   * `python -c "from IPython.external.mathjax import install_mathjax; install_mathjax(replace=True, dest='~/ipynb/ipython/lib/python2.7/site-packages/IPython/html/static/mathjax')"`
-7. Create now the following file under `~/ipynb/.ipython/profile_pyspark/ipython_notebook_config.py`
+7. Now paste the following contents into `~/ipynb/.ipython/profile_pyspark/ipython_notebook_config.py`
 
 ```
 c = get_config()
@@ -73,9 +75,9 @@ execfile(os.path.join(spark_home, 'python/pyspark/shell.py'))
 10. Start your Notebooks server!!:
   * `ipython/bin/ipython notebook --profile=pyspark`
 
-Now you should be able to browse to `<host_running_notebooks_server>:8888` and and see the WebUI!
+Now you should be able to navigate to `<host_running_notebooks_server>:8888` and and see the WebUI!
 
-Finally, check that everything is working by creating a new notebook and typing `sc`. You should see `<pyspark.context.SparkContext at 0x7fc70ac8af10>`
+Finally, check that everything is working by creating a new notebook and typing and running `sc` into it. You should see `<pyspark.context.SparkContext at 0x7fc70ac8af10>`
 
 ## Troubleshooting:
 
