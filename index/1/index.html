@@ -58,7 +58,13 @@
     <h3>October</h3>
     <ul>
       <li>
+<span>2015-10-27</span> » <a href="/posts/cassandra_summit_2015">Notes on Cassandra Summit 2015</a>
+</li>
+      <li>
 <span>2015-10-26</span> » <a href="/posts/docker_at_accu_2015">Docker at ACCU 2015</a>
+</li>
+      <li>
+<span>2015-10-23</span> » <a href="/posts/ds_stack_setup">Fitting IPython Notebooks, Spark and Cassandra all together</a>
 </li>
     </ul>
     <h3>June</h3>
@@ -79,19 +85,7 @@
 <span>2015-04-27</span> » <a href="/posts/cassandra_10_seconds_back">Claim your 10 seconds back!</a>
 </li>
     </ul>
-    <h3>March</h3>
-    <ul>
-      <li>
-<span>2015-03-17</span> » <a href="/posts/bath_ruby">Notes on BathRuby 2015</a>
-</li>
-      <li>
-<span>2015-03-12</span> » <a href="/posts/awsome_day">AWS AWSome Day</a>
-</li>
-      <li>
-<span>2015-03-09</span> » <a href="/posts/kanban_task_switching">Calculating the cost of task switching: why we use Kanban here at MyDrive.</a>
-</li>
-    </ul>
-</div>
+    </div>
 
         <div class="more">
           <a href="/archive" class="btn btn-small">read more..</a>
@@ -118,7 +112,7 @@
     <a href="/categories#aws-ref">aws <span>1</span></a>
   </li>
   <li>
-    <a href="/categories#devops-ref">devops <span>3</span></a>
+    <a href="/categories#devops-ref">devops <span>4</span></a>
   </li>
   <li>
     <a href="/categories#training-ref">training <span>1</span></a>
@@ -128,6 +122,12 @@
   </li>
   <li>
     <a href="/categories#data%20modelling-ref">data modelling <span>1</span></a>
+  </li>
+  <li>
+    <a href="/categories#conferences-ref">conferences <span>1</span></a>
+  </li>
+  <li>
+    <a href="/categories#talks-ref">talks <span>1</span></a>
   </li>
   <li>
     <a href="/categories#security-ref">security <span>4</span></a>
@@ -148,21 +148,29 @@
       <div class="_root">
         <h3 class="title"><a href="/">MyDrive Engineering</a> <span class="date"></span></h3>
 
-        <div class="summary">
-<p>Back in April Gavin Heavyside, MyDrive's Director of Engineering, spoke about Docker at the annual ACCU conference. MyDrive is using Docker in production for a number of services, and our use is set to grow.</p>
+        <div class="summary ellipsis">
+<h1 id="toc_0">Cassandra Summit 2015</h1>
 
-<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ihts6OyVDVczvX" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>
-</iframe>
-</p>
-<div style="margin-bottom:5px">
-  <strong>
-    <a href="//www.slideshare.net/gheavyside/docker-at-accu2015" title="Docker at ACCU2015" target="_blank">Docker at ACCU2015</a>
-  </strong>
-  from
-  <strong>
-    <a href="//www.slideshare.net/gheavyside" target="_blank">Gavin Heavyside</a>
-  </strong>
-</div>
+<p><img src="/assets/media/cassandra_summit_2015.png" alt="Cassandra Summit "></p>
+
+<p>DataStax Cassandra Summit is becoming a GREAT conference!! With each new edition more and more people, talks and activities are adding themselves to the event to make it really awesome.</p>
+
+<p>This year has been very special and intense for me, for several reasons.</p>
+
+<ul>
+<li><p>First because of the location. This year, the Summit was held in Santa Clara, CA. Which meant an opportunity for me to know the area, including San Francisco and The Bay. I've really enjoyed walking and visiting the city's touristic attractions. San Francisco is a lovely city and the weather has been just amazing, but I wouldn't like to close this note without mentioning the reality of the streets. It is simply incredible the amount of homeless and people suffering mental diseases you can see just by walking the city. And it seems that the situation is getting worse as the housing prices increase. This article on the news particularly caught my attention: <a href="http://www.sfchronicle.com/business/article/Tech-bus-drivers-forced-to-live-in-cars-to-make-6517928.php">Tech bus drivers forced to live in cars to make ends meet</a>.</p></li>
+<li><p>Second reason is because I have spoken there!! This has been, by far, the biggest conference I've had the pleasure to speak at. And I really enjoyed it!! The talk was actually a live coding demo (best kind of talks for sure, aren't they?) showing how I, being a Cassandra developer, not admin, tackled a production issue a couple of months ago. You can see the exact steps in <a href="http://engineering.mydrivesolutions.com/posts/cassandra_10_seconds_back/">this previous blog post</a> and also in <a href="https://www.youtube.com/watch?v=nwscaRTmVCM">this video</a> of this same talk in <a href="http://www.meetup.com/Cassandra-London/events/224555591/">the London Cassandra Meetup</a>.</p></li>
+<li><p>Third reason is because I've been officially certified as an Apache Cassandra Developer by DataStax and O'Reilly Media: <a href="https://twitter.com/calonso/status/646480545514258432">https://twitter.com/calonso/status/646480545514258432</a></p></li>
+<li><p>And finally, because I've been awarded with one of <a href="http://www.planetcassandra.org/mvps/">the DataStax MVPs of the year 2015</a>!! And, to be honest, I couldn't be more excited. I love Cassandra and I love contributing to OS projects and getting some recognition on it is always welcome. I'd like to congratulate every other MVP of this year (full roster to be announced soon) and the whole DataStax for such a great and well organised event.</p></li>
+</ul>
+
+<h2 id="toc_1">Tech Notes. Day 1</h2>
+
+<p>And after all this personal notes let's go into the technical notes I've made from the talks I've attended. Hope you find them interesting!!</p>
+
+<blockquote>
+<p><a href="http://esri.github.io/">http://esri.github.io/</a> project and it's <a href="https://github.com/Esri/gis-tools-for-hadoop">GIS tools for Hadoop subproject</a></p>
+</blockquote>
 </div>
 
         <div class="more">
@@ -238,7 +246,7 @@
     <a href="/tags#BathRuby-ref">BathRuby <span>1</span></a>
   </li>
   <li>
-    <a href="/tags#Cassandra-ref">Cassandra <span>2</span></a>
+    <a href="/tags#Cassandra-ref">Cassandra <span>4</span></a>
   </li>
   <li>
     <a href="/tags#Performance-ref">Performance <span>2</span></a>
@@ -250,10 +258,28 @@
     <a href="/tags#Benchmarking-ref">Benchmarking <span>1</span></a>
   </li>
   <li>
+    <a href="/tags#NoSQL-ref">NoSQL <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#DataStax-ref">DataStax <span>1</span></a>
+  </li>
+  <li>
     <a href="/tags#devops-ref">devops <span>1</span></a>
   </li>
   <li>
     <a href="/tags#docker-ref">docker <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Spark-ref">Spark <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#DataStax%20Enterprise-ref">DataStax Enterprise <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#IPython%20Notebooks-ref">IPython Notebooks <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#IPython-ref">IPython <span>1</span></a>
   </li>
   <li>
     <a href="/tags#security-ref">security <span>4</span></a>

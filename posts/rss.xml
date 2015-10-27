@@ -4,12 +4,24 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-10-26</pubDate>
+    <pubDate>2015-10-27</pubDate>
+    <item>
+      <title>Notes on Cassandra Summit 2015</title>
+      <link>http://engineering.mydrivesolutions.com/posts/cassandra_summit_2015</link>
+      <pubDate>2015-10-27</pubDate>
+      <description>Notes and highlights from Cassandra Summit 2015</description>
+    </item>
     <item>
       <title>Docker at ACCU 2015</title>
       <link>http://engineering.mydrivesolutions.com/posts/docker_at_accu_2015</link>
       <pubDate>2015-10-26</pubDate>
       <description>Docker talk at ACCU 2015</description>
+    </item>
+    <item>
+      <title>Fitting IPython Notebooks, Spark and Cassandra all together</title>
+      <link>http://engineering.mydrivesolutions.com/posts/ds_stack_setup</link>
+      <pubDate>2015-10-23</pubDate>
+      <description>An article on how to configure all these tools together</description>
     </item>
     <item>
       <title>Voting on Job Descriptions</title>

@@ -56,6 +56,38 @@
 <div class="row-fluid">
   <div class="span12">
     <div class="post">
+  <h3 class="title"><a href="/posts/cassandra_summit_2015">Notes on Cassandra Summit 2015</a> <span class="date">2015-10-27</span></h3>
+
+  <div class="summary ellipsis">
+<h1 id="toc_0">Cassandra Summit 2015</h1>
+
+<p><img src="/assets/media/cassandra_summit_2015.png" alt="Cassandra Summit "></p>
+
+<p>DataStax Cassandra Summit is becoming a GREAT conference!! With each new edition more and more people, talks and activities are adding themselves to the event to make it really awesome.</p>
+
+<p>This year has been very special and intense for me, for several reasons.</p>
+
+<ul>
+<li><p>First because of the location. This year, the Summit was held in Santa Clara, CA. Which meant an opportunity for me to know the area, including San Francisco and The Bay. I've really enjoyed walking and visiting the city's touristic attractions. San Francisco is a lovely city and the weather has been just amazing, but I wouldn't like to close this note without mentioning the reality of the streets. It is simply incredible the amount of homeless and people suffering mental diseases you can see just by walking the city. And it seems that the situation is getting worse as the housing prices increase. This article on the news particularly caught my attention: <a href="http://www.sfchronicle.com/business/article/Tech-bus-drivers-forced-to-live-in-cars-to-make-6517928.php">Tech bus drivers forced to live in cars to make ends meet</a>.</p></li>
+<li><p>Second reason is because I have spoken there!! This has been, by far, the biggest conference I've had the pleasure to speak at. And I really enjoyed it!! The talk was actually a live coding demo (best kind of talks for sure, aren't they?) showing how I, being a Cassandra developer, not admin, tackled a production issue a couple of months ago. You can see the exact steps in <a href="http://engineering.mydrivesolutions.com/posts/cassandra_10_seconds_back/">this previous blog post</a> and also in <a href="https://www.youtube.com/watch?v=nwscaRTmVCM">this video</a> of this same talk in <a href="http://www.meetup.com/Cassandra-London/events/224555591/">the London Cassandra Meetup</a>.</p></li>
+<li><p>Third reason is because I've been officially certified as an Apache Cassandra Developer by DataStax and O'Reilly Media: <a href="https://twitter.com/calonso/status/646480545514258432">https://twitter.com/calonso/status/646480545514258432</a></p></li>
+<li><p>And finally, because I've been awarded with one of <a href="http://www.planetcassandra.org/mvps/">the DataStax MVPs of the year 2015</a>!! And, to be honest, I couldn't be more excited. I love Cassandra and I love contributing to OS projects and getting some recognition on it is always welcome. I'd like to congratulate every other MVP of this year (full roster to be announced soon) and the whole DataStax for such a great and well organised event.</p></li>
+</ul>
+
+<h2 id="toc_1">Tech Notes. Day 1</h2>
+
+<p>And after all this personal notes let's go into the technical notes I've made from the talks I've attended. Hope you find them interesting!!</p>
+
+<blockquote>
+<p><a href="http://esri.github.io/">http://esri.github.io/</a> project and it's <a href="https://github.com/Esri/gis-tools-for-hadoop">GIS tools for Hadoop subproject</a></p>
+</blockquote>
+</div>
+
+  <div class="more">
+    <a href="/posts/cassandra_summit_2015" class="btn btn-small">read more..</a>
+  </div>
+</div>
+<div class="post">
   <h3 class="title"><a href="/posts/docker_at_accu_2015">Docker at ACCU 2015</a> <span class="date">2015-10-26</span></h3>
 
   <div class="summary">
@@ -77,6 +109,81 @@
 
   <div class="more">
     <a href="/posts/docker_at_accu_2015" class="btn btn-small">read more..</a>
+  </div>
+</div>
+<div class="post">
+  <h3 class="title"><a href="/posts/ds_stack_setup">Fitting IPython Notebooks, Spark and Cassandra all together</a> <span class="date">2015-10-23</span></h3>
+
+  <div class="summary ellipsis">
+<h1 id="toc_0">Fitting IPython Notebooks, Spark and Cassandra all together</h1>
+
+<p>Yesterday after more than a whole week working on this I've finally managed to set all this stack up.</p>
+
+<p>This stack is one of the most hot and trending topics nowadays as it is very useful for BigData, specifically for data exploration purposes.</p>
+
+<p>My starting point was a 3 nodes Cassandra cluster, intended for analytics, data exploration and adhoc reporting. This cluster was running
+DSE (DataStax Enterprise) 4.6, which ships with Cassandra 2.0. Worth mentioning that the cluster was running in Cassandra only mode.</p>
+
+<p>After having attended to the latest <a href="http://mrcalonso.com/notes-on-cassandra-summit-2015/">Cassandra Summit '15</a>, it was made clear not to use
+Spark with any Cassandra earlier than 2.1.8, because the integration was buggy. Therefore:</p>
+
+<ol>
+<li>Upgrade DSE to latest (4.8) version, that includes Cassandra 2.1.10.
+
+<ul>
+<li>Step by step instructions here: <a href="http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html">http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html</a>
+</li>
+</ul>
+</li>
+<li>Next step is to enable Spark on the cluster. This is one of the points where relying on something like DSE comes in handy, as the DSE distribution comes
+with a Spark installation and the Cassandra-Spark connector already configured and optimised for maximum compatbility and throughput. It is also really easy to
+enable Spark on the nodes.
+
+<ul>
+<li>For more information on this, head here: <a href="http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/anaHome/anaHomeTOC.html">http://docs.datastax.com/en/datastax<em>enterprise/4.8/datastax</em>enterprise/anaHome/anaHomeTOC.html</a>
+</li>
+</ul>
+</li>
+<li>Once I had Cassandra and Spark running on all nodes and one of them was designated as the Spark Master (first of the Cassandra seeds by default, but you can check it with <code>dse client-tool spark master-address</code>), it's time to install IPython and all its dependencies:
+
+<ol>
+<li>First step is to install all system required packages (use apt-get, yum, etc depending on your OS): <code>sudo apt-get install build-essential libcurl4-openssl-dev libssl-dev zlib1g-dev libpcre3-dev gfortran libblas-dev libblas3gf liblapack3gf liblapack-dev libncurses5-dev libatlas-dev libatlas-base-dev libscalapack-mpi1 libscalapack-pvm1 liblcms-utils python-imaging-doc python-imaging-dbg libamd2.3.1 libjpeg-turbo8 libjpeg8 liblcms1 libumfpack5.6.2 python-imaging libpng12-0 libpng12-dev libfreetype6 libfreetype6-dev libcurl4-gnutls-dev python-pycurl-dbg git-core cython libhdf5-7 libhdf5-serial-dev python-egenix-mxdatetime vim python-numpy python-scipy pandoc openjdk-7-jdk</code>
+</li>
+<li>Next step is to install <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">Python Virtualenv</a>, as IPython depends on Python and changing the system's Python installation can be dangerous: <code>sudo pip install virtualenv</code>
+</li>
+<li>Then, create a folder for your installation. This folder will contain the virtual environment for the notebooks installation (ipynb in this example). <code>mkdir ipynb</code> and <code>cd ipynb</code>
+</li>
+<li>Create a virtual environment: <code>virtualenv ipython</code>. Where ipython is the name of the virtual environment we're creating.</li>
+<li>To begin using the virtual environment we need to activate it: <code>source ipython/bin/activate</code>. At this point our prompt will indicate that we're inside the <code>ipython</code> virtual env.</li>
+<li>Install all IPython's dependencies (using pip): <code>pip install uwsgi numpy freetype-py pillow scipy python-dateutil pytz six scikit-learn pandas matplotlib pygments readline nose pexpect cython networkx numexpr tables patsy statsmodels sympy scikit-image theano xlrd xlwt ipython[notebook]</code>
+</li>
+</ol>
+</li>
+<li>Let's create a IPython default profile (we'll not use it, but it's safe to create it to avoid bugs and strange issues)
+
+<ul>
+<li><code>./ipython/bin/ipython profile create --profile=default --ipython-dir .ipython</code></li>
+</ul>
+</li>
+<li>Then we create the pyspark ipython profile we'll use.
+
+<ul>
+<li><code>./ipython/bin/ipython profile create --profile=pyspark --ipython-dir .ipython</code></li>
+</ul>
+</li>
+<li>Now install MathJax extension:
+
+<ul>
+<li><code>python -c "from IPython.external.mathjax import install_mathjax; install_mathjax(replace=True, dest='~/ipynb/ipython/lib/python2.7/site-packages/IPython/html/static/mathjax')"</code></li>
+</ul>
+</li>
+<li>Now paste the following contents into <code>~/ipynb/.ipython/profile_pyspark/ipython_notebook_config.py</code>
+</li>
+</ol>
+</div>
+
+  <div class="more">
+    <a href="/posts/ds_stack_setup" class="btn btn-small">read more..</a>
   </div>
 </div>
 <div class="post">
@@ -172,74 +279,13 @@ repository, here are the links:</p>
     <a href="/posts/cassandra_models_benchmarking" class="btn btn-small">read more..</a>
   </div>
 </div>
-<div class="post">
-  <h3 class="title"><a href="/posts/cassandra_10_seconds_back">Claim your 10 seconds back!</a> <span class="date">2015-04-27</span></h3>
-
-  <div class="summary ellipsis">
-<p>A couple of weeks ago we released a feature and it's performance was unexpectedly poor and here I want to share the steps and tools used to get to the root cause of the problem.</p>
-
-<p>To give a little bit of background I'll tell you that the feature was something really common nowadays: <strong>Saving a bunch of time series in Cassandra</strong></p>
-
-<h3 id="toc_0">Step 1: Look for evidences in metrics</h3>
-
-<p>The natural first step I think everyone does is to look at the graphs (here we use graphite) and try to find evidences of what's going on.</p>
-
-<p>In our case we had a very clear evidence that something was wrong as the time consumed in the process had increased by around 600% after the deploy!!</p>
-
-<p><img src="/assets/media/events_latency_increase.png" alt="Massive time processing increase"></p>
-
-<p>But that means that not only something is wrong in the feature but also, and even more scary, in our whole process!!
-How can such a poorly performing piece of code have reached production without anyone noticing it before?
-Ok, we don't have performance tests as part of our CI process, but we test every feature in our pre-production environments before going
-to production and that should have appeared there!!
-That would have simply been unacceptable and processes are easy and strong here <a href="https://twitter.com/_mydrive">@_MyDrive</a>, so,
-after scrolling a little bit along the graphs we found an explanation. The tests ran in the pre-production environment were ok!</p>
-
-<p><img src="/assets/media/events_latency_increase_with_labs.png" alt="Graph showing timing taken on pre-production"></p>
-
-</div>
-
-  <div class="more">
-    <a href="/posts/cassandra_10_seconds_back" class="btn btn-small">read more..</a>
-  </div>
-</div>
-<div class="post">
-  <h3 class="title"><a href="/posts/bath_ruby">Notes on BathRuby 2015</a> <span class="date">2015-03-17</span></h3>
-
-  <div class="summary ellipsis">
-<p>UPDATE: I've just received this <a href="https://www.youtube.com/watch?v=plv1oRda0d0">Amazing Timelapse</a> of the event! (Don't miss the <a href="https://twitter.com/BathRuby/status/576419163750731776">Happy Friday Hug moment</a> and the massive movement on breaks xD)</p>
-
-<p>Friday 13, March 2015, 5.30am. My alarmclock rings. I don't feel tired but excited instead!.
-Why? Lots of hours to enjoy learning Ruby from some of the top minds!!</p>
-
-<p>So after several hours by train and car <a href="https://twitter.com/calonso/status/576330348163960832">here we are!!</a>,
-we made it just in time to grab a coffee and then the talks started!</p>
-
-<h4 id="toc_0"><a href="https://twitter.com/lindaliukas">Linda Liukas</a></h4>
-
-<p>Linda showed us her <a href="http://www.helloruby.com/">successful KickStarter project: HelloRuby</a>, definitely a really nice idea
-to introduce kids the passion for computing and programming.</p>
-
-<p>Her talk gave us the idea of trying following her steps and try to get out a driving related project
-using KickStarter funds. Would you like to see that happening? <a href="https://twitter.com/_MyDrive">Let us know!</a></p>
-
-<h4 id="toc_1"><a href="https://twitter.com/r00k">Ben Orenstein</a></h4>
-
-<p>Listening to Ben is definitely something very familiar to me as I've been following <a href="https://robots.thoughtbot.com/">his Robots Podcast</a>
-for several years, but meeting him in person was awesome!! Specially because of the great talk he did.</p>
-
-</div>
-
-  <div class="more">
-    <a href="/posts/bath_ruby" class="btn btn-small">read more..</a>
-  </div>
-</div>
 
 <div class="pagination">
   <ul>
       <li class="active"><a href="/posts/index/1">1</a></li>
       <li><a href="/posts/index/2">2</a></li>
       <li><a href="/posts/index/3">3</a></li>
+      <li><a href="/posts/index/4">4</a></li>
   </ul>
 </div>
 

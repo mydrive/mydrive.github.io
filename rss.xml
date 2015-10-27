@@ -4,7 +4,7 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-10-26</pubDate>
+    <pubDate>2015-10-27</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
@@ -12,7 +12,9 @@
   &lt;h2&gt;2015&lt;/h2&gt;
     &lt;h3&gt;October&lt;/h3&gt;
     &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2015-10-27&lt;/span&gt; &amp;raquo; &lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;span&gt;2015-10-26&lt;/span&gt; &amp;raquo; &lt;a href="/posts/docker_at_accu_2015"&gt;Docker at ACCU 2015&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span&gt;2015-10-23&lt;/span&gt; &amp;raquo; &lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
     &lt;h3&gt;June&lt;/h3&gt;
     &lt;ul&gt;
@@ -72,7 +74,7 @@
     &lt;a href="/categories#aws-ref"&gt;aws &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#devops-ref"&gt;devops &lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#devops-ref"&gt;devops &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#training-ref"&gt;training &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -82,6 +84,12 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#data modelling-ref"&gt;data modelling &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#conferences-ref"&gt;conferences &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/categories#talks-ref"&gt;talks &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
@@ -127,10 +135,11 @@
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;devops (3)&lt;/h3&gt;
+  &lt;h3&gt;devops (4)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/docker_at_accu_2015"&gt;Docker at ACCU 2015&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/posts/job_descriptions"&gt;Voting on Job Descriptions&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;training (1)&lt;/h3&gt;
@@ -145,6 +154,14 @@
   &lt;h3&gt;data modelling (1)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;conferences (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;talks (1)&lt;/h3&gt;
+  &lt;ul&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;security (4)&lt;/h3&gt;
   &lt;ul&gt;
@@ -233,7 +250,7 @@
     &lt;a href="/tags#BathRuby-ref"&gt;BathRuby &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#Performance-ref"&gt;Performance &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
@@ -245,10 +262,28 @@
     &lt;a href="/tags#Benchmarking-ref"&gt;Benchmarking &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
+    &lt;a href="/tags#NoSQL-ref"&gt;NoSQL &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#DataStax-ref"&gt;DataStax &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
     &lt;a href="/tags#devops-ref"&gt;devops &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#docker-ref"&gt;docker &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Spark-ref"&gt;Spark &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#DataStax Enterprise-ref"&gt;DataStax Enterprise &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#IPython Notebooks-ref"&gt;IPython Notebooks &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#IPython-ref"&gt;IPython &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#security-ref"&gt;security &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
@@ -350,6 +385,8 @@
   &lt;h3 id="Cassandra-ref"&gt;Cassandra&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Performance-ref"&gt;Performance&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
@@ -357,10 +394,22 @@
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Benchmarking-ref"&gt;Benchmarking&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="NoSQL-ref"&gt;NoSQL&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="DataStax-ref"&gt;DataStax&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="devops-ref"&gt;devops&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/docker_at_accu_2015"&gt;Docker at ACCU 2015&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="docker-ref"&gt;docker&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/docker_at_accu_2015"&gt;Docker at ACCU 2015&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Spark-ref"&gt;Spark&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="DataStax Enterprise-ref"&gt;DataStax Enterprise&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="IPython Notebooks-ref"&gt;IPython Notebooks&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="IPython-ref"&gt;IPython&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="security-ref"&gt;security&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/ghost"&gt;GHOST CVE-2015-0235&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/rails-cve-2014-7818"&gt;Ruby on Rails CVE-2014-7818&lt;/a&gt;&lt;/li&gt;
