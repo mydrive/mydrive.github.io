@@ -21,7 +21,7 @@ They main idea behind this process is to have the replacement node up and runnin
 The key points of the process are:
 
 1. Data will be copied from the old node to the new one using an external volume instead of transmitting it through the network.
-2. The new node will receive also the schema, so that it opens all tables before accepting any query.
+2. The new node will also receive the schema, so that it opens all tables before accepting any query.
 3. The new node will be given the tokens by configuration, so the replacement will be responsible for the exact same data of the node being replaced, and as it already holds the data, no bootstrap process is required.
 
 ### Steps
