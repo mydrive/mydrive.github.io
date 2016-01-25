@@ -24,6 +24,8 @@ The key points of the process are:
 2. The new node will also receive the schema, so that it opens all tables before accepting any query.
 3. The new node will be given the tokens by configuration, so the replacement will be responsible for the exact same data of the node being replaced, and as it already holds the data, no bootstrap process is required.
 
+All our infrastructure is in AWS, therefore, we used EBS volumes to backup and restore cassandra data. You may use a different data transfer method which suits you better in your infrastructure.
+
 ### Steps
 
 1. Create the external volume you're going to use to transfer the data from the old node to the new one.
@@ -37,7 +39,7 @@ The key points of the process are:
 4. Once rsync has finished, unmount and disconnect the external volume from the old node and connect and mount it into the new one. Now rsync the backed up cassandra data directory into the new Cassandra installation `rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data`
 5. Mount the external volume into the old node again.
 6. Drain the old node: `nodetool drain`
-7. Stop Cassandra in the old node: `sudo service cassandra stop` (NOTE: we use chef in our infrastructure so make sure it is using the right cookbook which makes cassandra service stopped or stop chef service in that node. Otherwise, cassandra will be started by chef and it will try to join the cluster)
+7. Stop Cassandra in the old node: `sudo service cassandra stop` (NOTE: we use chef in our infrastructure so make sure that the node it is using the right cookbook, which makes cassandra service stopped, or stop chef service in that node. Otherwise, cassandra will be started by chef and it will try to join the cluster)
 8. Do a final rsync. This one is to catch any last changes.
   1. `rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup`
   2. Unmount and disconnect volume from the old node
