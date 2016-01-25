@@ -33,11 +33,11 @@ The key points of the process are:
   3. `seeds`
   4. `initial_token`: This is one of the key ones. The initial token has to match the exact token(s) the old node is responsible for. You can get them by running `nodetool ring` if single token nodes or `nodetool info -T` if vnodes.
   5. auto_bootstrap: false
-3. After mounting the external volume created in step 1 into the old node, `rsync` the whole cassandra data directory to it. `rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup/` (Assuming external volume is mounted on `/mnt/backup` and `/var/lib/cassadnra/data` is Cassandra's data directory on the old machine).
+3. After mounting the external volume created in step 1 into the old node, `rsync` the whole cassandra data directory to it. `rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup/` (Assuming external volume is mounted on `/mnt/backup` and `/var/lib/cassandra/data` is Cassandra's data directory on the old machine).
 4. Once rsync has finished, unmount and disconnect the external volume from the old node and connect and mount it into the new one. Now rsync the backed up cassandra data directory into the new Cassandra installation `rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data`
 5. Mount the external volume into the old node again.
 6. Drain the old node: `nodetool drain`
-7. Stop Cassandra in the old node: `sudo service cassandra stop`
+7. Stop Cassandra in the old node: `sudo service cassandra stop` (NOTE: we use chef in our infrastructure so make sure it is using the right cookbook which makes cassandra service stopped or stop chef service in that node. Otherwise, cassandra will be started by chef and it will try to join the cluster)
 8. Do a final rsync. This one is to catch any last changes.
   1. `rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup`
   2. Unmount and disconnect volume from the old node
