@@ -4,7 +4,13 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-10-27</pubDate>
+    <pubDate>2016-01-26</pubDate>
+    <item>
+      <title>Cassandra instantaneous in place node replacement</title>
+      <link>http://engineering.mydrivesolutions.com/posts/cassandra_nodes_replacement</link>
+      <pubDate>2016-01-22</pubDate>
+      <description>A quick process to replace a Cassandra node and have it immediately running.</description>
+    </item>
     <item>
       <title>Notes on Cassandra Summit 2015</title>
       <link>http://engineering.mydrivesolutions.com/posts/cassandra_summit_2015</link>

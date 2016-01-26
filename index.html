@@ -56,6 +56,37 @@
 <div class="row-fluid">
   <div class="span12">
     <div class="post">
+  <h3 class="title"><a href="/posts/cassandra_nodes_replacement">Cassandra instantaneous in place node replacement</a> <span class="date">2016-01-22</span></h3>
+
+  <div class="summary ellipsis">
+<p>At some point everyone using Cassandra faces the situation of having to replace nodes.
+Either because the cluster needs to scale and some nodes are too small or because a node has failed or because your virtualisation provider is going to remove it.</p>
+
+<p>Whichever the reason the situation we face is that a new node has to be streamed in, to hold the <strong>exact same data</strong> the old one had. Why do we need to wait for a whole streaming process, with the network and CPU overhead this requires when we could just copy the data into the new node and have it join the ring replacing the old one?</p>
+
+<p>That's what we, at <a href="https://twitter.com/_mydrive">MyDrive</a> have been doing for a while and we want to share the exact process we follow with the community shall it help someone.</p>
+
+<h3 id="toc_0">Summary</h3>
+
+<p>They main idea behind this process is to have the replacement node up and running as quick as possible by cutting down the process where it takes longer, streaming data.</p>
+
+<p>The key points of the process are:</p>
+
+<ol>
+<li>Data will be copied from the old node to the new one using an external volume instead of transmitting it through the network.</li>
+<li>The new node will also receive the schema, so that it opens all tables before accepting any query.</li>
+<li>The new node will be given the tokens by configuration, so the replacement will be responsible for the exact same data of the node being replaced, and as it already holds the data, no bootstrap process is required.</li>
+</ol>
+
+<p>All our infrastructure is in AWS, therefore, we used EBS volumes to backup and restore cassandra data. You may use a different data transfer method which suits you better in your infrastructure.</p>
+
+</div>
+
+  <div class="more">
+    <a href="/posts/cassandra_nodes_replacement" class="btn btn-small">read more..</a>
+  </div>
+</div>
+<div class="post">
   <h3 class="title"><a href="/posts/cassandra_summit_2015">Notes on Cassandra Summit 2015</a> <span class="date">2015-10-27</span></h3>
 
   <div class="summary ellipsis">
@@ -218,65 +249,6 @@ found the right person yet, but it's been really worthwhile.</p>
 
   <div class="more">
     <a href="/posts/job_descriptions" class="btn btn-small">read more..</a>
-  </div>
-</div>
-<div class="post">
-  <h3 class="title"><a href="/posts/cassandra_models_benchmarking">Benchmarking Cassandra models</a> <span class="date">2015-05-14</span></h3>
-
-  <div class="summary ellipsis">
-<p>During the last couple of weeks we've been very focused on deeply understanding Cassandra's
-write and read paths to build our models the best possible way.</p>
-
-<p>After so much investigation I can summarize which are the steps we follow to assess our
-model's performance.</p>
-
-<h3 id="toc_0">1. Have good practices and anti-patterns always in mind.</h3>
-
-<p>Cassandra is known to be a very resilient and highly performant platform, but
-only so long as you follow the rules and work with the underlying data model.</p>
-
-<p>There are quite a few of these rules so my recommendation is to read through them
-quickly before thinking of your model.</p>
-
-<p>There are lots of places online where you can read about the good practices to follow
-and anti-patterns to avoid when data modelling for Cassandra but I have my own
-repository, here are the links:</p>
-
-<ul>
-<li>
-<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014/">16 Notes on Cassandra Summit</a>
-
-<ul>
-<li>Collection of good practices given by <a href="https://twitter.com/patrickmcfadin">Patrick McFadin</a> at last Cassandra Summit EU (2014)</li>
-</ul>
-</li>
-<li>
-<a href="http://mrcalonso.com/16-notes-cassandra-summit-europe-2014-part-ii/">16 Notes on Cassandra Summit (II)</a>
-
-<ul>
-<li>Collection of some more good practices and brand new features to consider. Again from Cassandra Summit EU 2014</li>
-</ul>
-</li>
-<li>
-<a href="http://mrcalonso.com/cassandra-day-london-2015-2/">Cassandra Day London 2015</a>
-
-<ul>
-<li>Collection of some use cases and a very interesting anti-patterns list by <a href="https://twitter.com/chbatey">Christopher Batey</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="http://patrickmcfadin.com/2014/02/05/getting-started-with-time-series-data-modeling/">Getting Started with Cassandra Time Series data modelling</a>
-
-<ul>
-<li>Three different patterns you can follow when using Cassandra to store time series</li>
-</ul>
-</li>
-</ul>
-</div>
-
-  <div class="more">
-    <a href="/posts/cassandra_models_benchmarking" class="btn btn-small">read more..</a>
   </div>
 </div>
 

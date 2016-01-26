@@ -4,11 +4,16 @@
     <title>MyDrive Engineering</title>
     <description>MyDrive Engineering</description>
     <link>http://engineering.mydrivesolutions.com</link>
-    <pubDate>2015-10-27</pubDate>
+    <pubDate>2016-01-26</pubDate>
     <item>
       <title>Archive</title>
       <link>http://engineering.mydrivesolutions.com/archive</link>
       <description>
+  &lt;h2&gt;2016&lt;/h2&gt;
+    &lt;h3&gt;January&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span&gt;2016-01-22&lt;/span&gt; &amp;raquo; &lt;a href="/posts/cassandra_nodes_replacement"&gt;Cassandra instantaneous in place node replacement&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;h2&gt;2015&lt;/h2&gt;
     &lt;h3&gt;October&lt;/h3&gt;
     &lt;ul&gt;
@@ -68,7 +73,7 @@
     &lt;a href="/categories#mentoring-ref"&gt;mentoring &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/categories#operations-ref"&gt;operations &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/categories#operations-ref"&gt;operations &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/categories#aws-ref"&gt;aws &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -127,9 +132,10 @@
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/africa_mentorship"&gt;MyDrive team helping bright minds in Africa&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;h3&gt;operations (1)&lt;/h3&gt;
+  &lt;h3&gt;operations (2)&lt;/h3&gt;
   &lt;ul&gt;
       &lt;li&gt;&lt;a href="/posts/awsome_day"&gt;AWS AWSome Day&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="/posts/cassandra_nodes_replacement"&gt;Cassandra instantaneous in place node replacement&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;h3&gt;aws (1)&lt;/h3&gt;
   &lt;ul&gt;
@@ -250,7 +256,7 @@
     &lt;a href="/tags#BathRuby-ref"&gt;BathRuby &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;4&lt;/span&gt;&lt;/a&gt;
+    &lt;a href="/tags#Cassandra-ref"&gt;Cassandra &lt;span&gt;5&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#Performance-ref"&gt;Performance &lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
@@ -260,6 +266,12 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#Benchmarking-ref"&gt;Benchmarking &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Operations-ref"&gt;Operations &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/tags#Node replacement-ref"&gt;Node replacement &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a href="/tags#NoSQL-ref"&gt;NoSQL &lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
@@ -385,6 +397,7 @@
   &lt;h3 id="Cassandra-ref"&gt;Cassandra&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_10_seconds_back"&gt;Claim your 10 seconds back!&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_nodes_replacement"&gt;Cassandra instantaneous in place node replacement&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="/posts/ds_stack_setup"&gt;Fitting IPython Notebooks, Spark and Cassandra all together&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Performance-ref"&gt;Performance&lt;/h3&gt;
@@ -394,6 +407,10 @@
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="Benchmarking-ref"&gt;Benchmarking&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_models_benchmarking"&gt;Benchmarking Cassandra models&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Operations-ref"&gt;Operations&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_nodes_replacement"&gt;Cassandra instantaneous in place node replacement&lt;/a&gt;&lt;/li&gt;
+  &lt;h3 id="Node replacement-ref"&gt;Node replacement&lt;/h3&gt;
+    &lt;li&gt;&lt;a href="/posts/cassandra_nodes_replacement"&gt;Cassandra instantaneous in place node replacement&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="NoSQL-ref"&gt;NoSQL&lt;/h3&gt;
     &lt;li&gt;&lt;a href="/posts/cassandra_summit_2015"&gt;Notes on Cassandra Summit 2015&lt;/a&gt;&lt;/li&gt;
   &lt;h3 id="DataStax-ref"&gt;DataStax&lt;/h3&gt;

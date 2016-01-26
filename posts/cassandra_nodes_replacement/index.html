@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cassandra instantaneous in place node replacement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A quick process to replace a Cassandra node and have it immediately running.">
+    <meta name="author" content="MyDrive Solutions">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-88238289010db19359d2181e634e95cd.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-e81fa375b231bedf6cb2dbc6653570cc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/google_prettify/sons-of-obsidian-afb0925bfa2d994f17dab93e13fbf999.css' type='text/css' rel='stylesheet' media='all'>
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  <link rel="shortcut icon" href="/assets/media/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">MyDrive Engineering</a>
+          <ul class="nav">
+              
+                <li><a href="/archive">Archive</a></li>
+              
+              
+                <li><a href="/tags">Tags</a></li>
+              
+              
+                <li><a href="/categories">Categories</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+          by <strong>Carlos Alonso Perez</strong>
+  <p>Software Engineer</p>
+  <p><a href="https://twitter.com/calonso" target="_blank">@calonso</a></p>
+
+<div class="page-header">
+  <h1>Cassandra instantaneous in place node replacement </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>2016-01-22</strong>
+    </div>
+    <div class="content">
+      <p>At some point everyone using Cassandra faces the situation of having to replace nodes.
+Either because the cluster needs to scale and some nodes are too small or because a node has failed or because your virtualisation provider is going to remove it.</p>
+
+<p>Whichever the reason the situation we face is that a new node has to be streamed in, to hold the <strong>exact same data</strong> the old one had. Why do we need to wait for a whole streaming process, with the network and CPU overhead this requires when we could just copy the data into the new node and have it join the ring replacing the old one?</p>
+
+<p>That&#39;s what we, at <a href="https://twitter.com/_mydrive">MyDrive</a> have been doing for a while and we want to share the exact process we follow with the community shall it help someone.</p>
+
+<h3 id="toc_0">Summary</h3>
+
+<p>They main idea behind this process is to have the replacement node up and running as quick as possible by cutting down the process where it takes longer, streaming data.</p>
+
+<p>The key points of the process are:</p>
+
+<ol>
+<li>Data will be copied from the old node to the new one using an external volume instead of transmitting it through the network.</li>
+<li>The new node will also receive the schema, so that it opens all tables before accepting any query.</li>
+<li>The new node will be given the tokens by configuration, so the replacement will be responsible for the exact same data of the node being replaced, and as it already holds the data, no bootstrap process is required.</li>
+</ol>
+
+<p>All our infrastructure is in AWS, therefore, we used EBS volumes to backup and restore cassandra data. You may use a different data transfer method which suits you better in your infrastructure.</p>
+
+<h3 id="toc_1">Steps</h3>
+
+<ol>
+<li>Create the external volume you&#39;re going to use to transfer the data from the old node to the new one.</li>
+<li>Setup the new node, paying special attention to the following configuration parameters:
+
+<ol>
+<li><code>listen_address</code></li>
+<li><code>rpc_address</code></li>
+<li><code>seeds</code></li>
+<li><code>initial_token</code>: This is one of the key ones. The initial token has to match the exact token(s) the old node is responsible for. You can get them by running <code>nodetool ring</code> if single token nodes or <code>nodetool info -T</code> if vnodes.</li>
+<li>auto_bootstrap: false</li>
+</ol></li>
+<li>After mounting the external volume created in step 1 into the old node, <code>rsync</code> the whole cassandra data directory to it. <code>rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup/</code> (Assuming external volume is mounted on <code>/mnt/backup</code> and <code>/var/lib/cassandra/data</code> is Cassandra&#39;s data directory on the old machine).</li>
+<li>Once rsync has finished, unmount and disconnect the external volume from the old node and connect and mount it into the new one. Now rsync the backed up cassandra data directory into the new Cassandra installation <code>rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data</code></li>
+<li>Mount the external volume into the old node again.</li>
+<li>Drain the old node: <code>nodetool drain</code></li>
+<li>Stop Cassandra in the old node: <code>sudo service cassandra stop</code> (NOTE: we use chef in our infrastructure so make sure that the node it is using the right cookbook, which makes cassandra service stopped, or stop chef service in that node. Otherwise, cassandra will be started by chef and it will try to join the cluster)</li>
+<li>Do a final rsync. This one is to catch any last changes.
+
+<ol>
+<li><code>rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup</code></li>
+<li>Unmount and disconnect volume from the old node</li>
+<li>Connect and mount it into the new one</li>
+<li><code>rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data</code></li>
+<li>Ensure cassandra data folder is owned by the cassandra user (rsync copies the owner&#39;s UID along with the data and that UID may not be Cassandra&#39;s user in the new machine).</li>
+</ol></li>
+<li>In the new node, delete all system tables except for the schema ones. This will ensure that the new Cassandra node will not have any corrupt or previous configuration assigned.
+
+<ol>
+<li><code>sudo cd /var/lib/cassandra/data/system &amp;&amp; sudo ls | grep -v schema | xargs -I {} sudo rm -rf {}</code></li>
+<li><code>sudo rm -rf /var/lib/cassandra/data/system_traces</code></li>
+<li><code>sudo rm -rf /var/lib/cassandra/commitlog</code></li>
+<li><code>sudo rm -rf /var/lib/cassandra/saved_caches</code></li>
+</ol></li>
+<li>Start the new node. <code>sudo service cassandra start</code></li>
+<li>Check that everything is working properly:
+
+<ol>
+<li>In the other nodes&#39;s logs you should see a message like this: <code>WARN &lt;time&gt; Token &lt;your token&gt; changing ownership from &lt;old node&#39;s IP&gt; to &lt;new node&#39;s IP&gt;</code> Indicating that they recognise the new node and that is taking over the other&#39;s token.</li>
+<li><code>nodetool [ring/status]</code> should show the new node&#39;s IP owning the specified token(s) and the old one shouldn&#39;t appear anymore.</li>
+<li>Everything should look normal.</li>
+</ol></li>
+<li>Update new node&#39;s <code>cassandra.yaml</code> to remove the <code>auto_bootstrap</code> config and to leave <code>initial_token</code> empty.</li>
+<li>You can now safely destroy you old machine.</li>
+</ol>
+
+<p>And voilà! By following these steps carefully you will be able to replace nodes and have them running quickly, avoiding any tokens movement or streaming.</p>
+
+    </div>
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      <li>
+        <a href="/categories#operations-ref">operations <span>2</span></a>
+      </li>
+    </ul>
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      <li>
+        <a href="/tags#Cassandra-ref">Cassandra <span>5</span></a>
+      </li>
+      <li>
+        <a href="/tags#Operations-ref">Operations <span>1</span></a>
+      </li>
+      <li>
+        <a href="/tags#Node replacement-ref">Node replacement <span>1</span></a>
+      </li>
+    </ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+          <li class="prev"><a href="/posts/cassandra_summit_2015" title="Notes on Cassandra Summit 2015">&larr; Previous</a></li>
+
+          <li><a href="/archive">Archive</a></li>
+
+          <li class="next disabled"><a>Next &rarr;</a>
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <hr>
+      <div class="footer">
+        <p>&copy; <a href="http://mydrivesolutions.com" target="_blank">MyDrive Solutions Limited</a> 2014
+          with help from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Google Prettify -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32835100-1']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    
+  </body>
+</html>
