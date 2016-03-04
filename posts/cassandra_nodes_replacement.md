@@ -21,8 +21,7 @@ They main idea behind this process is to have the replacement node up and runnin
 The key points of the process are:
 
 1. Data will be copied from the old node to the new one using an external volume instead of transmitting it through the network.
-2. The new node will also receive the schema, so that it opens all tables before accepting any query.
-3. The new node will be given the tokens by configuration, so the replacement will be responsible for the exact same data of the node being replaced, and as it already holds the data, no bootstrap process is required.
+2. The new node will be given **the exact same** configuration as the replaced one. Therefore, the replacement node will be responsible for the same tokens as the replaced one, and will also have the same Host-ID, so, when it joins the ring, the other nodes won't even notice the difference!
 
 All our infrastructure is in AWS, therefore, we used EBS volumes to backup and restore cassandra data. You may use a different data transfer method which suits you better in your infrastructure.
 
@@ -33,8 +32,6 @@ All our infrastructure is in AWS, therefore, we used EBS volumes to backup and r
   1. `listen_address`
   2. `rpc_address`
   3. `seeds`
-  4. `initial_token`: This is one of the key ones. The initial token has to match the exact token(s) the old node is responsible for. You can get them by running `nodetool ring` if single token nodes or `nodetool info -T` if vnodes.
-  5. auto_bootstrap: false
 3. After mounting the external volume created in step 1 into the old node, `rsync` the whole cassandra data directory to it. `rsync -av --progress --delete /var/lib/cassandra/data /mnt/backup/` (Assuming external volume is mounted on `/mnt/backup` and `/var/lib/cassandra/data` is Cassandra's data directory on the old machine).
 4. Once rsync has finished, unmount and disconnect the external volume from the old node and connect and mount it into the new one. Now rsync the backed up cassandra data directory into the new Cassandra installation `rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data`
 5. Mount the external volume into the old node again.
@@ -46,17 +43,14 @@ All our infrastructure is in AWS, therefore, we used EBS volumes to backup and r
   3. Connect and mount it into the new one
   4. `rsync -av --progress --delete /mnt/backup /var/lib/cassandra/data`
   5. Ensure cassandra data folder is owned by the cassandra user (rsync copies the owner's UID along with the data and that UID may not be Cassandra's user in the new machine).
-9. In the new node, delete all system tables except for the schema ones. This will ensure that the new Cassandra node will not have any corrupt or previous configuration assigned.
-  1. `sudo cd /var/lib/cassandra/data/system && sudo ls | grep -v schema | xargs -I {} sudo rm -rf {}`
-  2. `sudo rm -rf /var/lib/cassandra/data/system_traces`
-  3. `sudo rm -rf /var/lib/cassandra/commitlog`
-  4. `sudo rm -rf /var/lib/cassandra/saved_caches`
-10. Start the new node. `sudo service cassandra start`
-11. Check that everything is working properly:
-  1. In the other nodes's logs you should see a message like this: `WARN <time> Token <your token> changing ownership from <old node's IP> to <new node's IP>` Indicating that they recognise the new node and that is taking over the other's token.
-  2. `nodetool [ring/status]` should show the new node's IP owning the specified token(s) and the old one shouldn't appear anymore.
-  3. Everything should look normal.
-12. Update new node's `cassandra.yaml` to remove the `auto_bootstrap` config and to leave `initial_token` empty.
+9. Start the new node. `sudo service cassandra start`
+10. Check that everything is working properly:
+  1. In the replacement's logs you should see a message like this: `WARN <time> Not updating host ID <host ID> for /<replaced node IP address> because it's mine` Indicating that the new node is replacing the old one.
+  2. In the replacement's logs you should also see one message like the following per token: `INFO <time> Nodes /<old IP address> and /<new IP address> have the same token <a token>.  Ignoring /<old IP address>` Indicating that the new node is becoming primary owner of the replaced's tokens.
+  3. In the other nodes' logs you should see a message like: `Host ID collision for <Host ID> between /<replaced IP address> and /<replacement IP address>; /<replacement IP address> is the new owner` Indicating that the other nodes acknowledge the change
+  4. `nodetool [status]` should show the new node's IP owning the replaced Host ID and the old one shouldn't appear anymore.
+  5. Everything should look normal.
+11. Update other nodes' `seeds` list if the replaced node was a seed one.
 13. You can now safely destroy you old machine.
 
 And voilà! By following these steps carefully you will be able to replace nodes and have them running quickly, avoiding any tokens movement or streaming.
