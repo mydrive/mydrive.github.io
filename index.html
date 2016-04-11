@@ -89,29 +89,10 @@ Either because the cluster needs to scale and some nodes are too small or becaus
 <div class="post">
   <h3 class="title"><a href="/posts/cassandra_summit_2015">Notes on Cassandra Summit 2015</a> <span class="date">2015-10-27</span></h3>
 
-  <div class="summary ellipsis">
-<h1 id="toc_0">Cassandra Summit 2015</h1>
+  <div class="summary">
+<p>This post has moved:</p>
 
-<p><img src="/assets/media/cassandra_summit_2015.png" alt="Cassandra Summit "></p>
-
-<p>DataStax Cassandra Summit is becoming a GREAT conference!! With each new edition more and more people, talks and activities are adding themselves to the event to make it really awesome.</p>
-
-<p>This year has been very special and intense for me, for several reasons.</p>
-
-<ul>
-<li><p>First because of the location. This year, the Summit was held in Santa Clara, CA. Which meant an opportunity for me to know the area, including San Francisco and The Bay. I've really enjoyed walking and visiting the city's touristic attractions. San Francisco is a lovely city and the weather has been just amazing, but I wouldn't like to close this note without mentioning the reality of the streets. It is simply incredible the amount of homeless and people suffering mental diseases you can see just by walking the city. And it seems that the situation is getting worse as the housing prices increase. This article on the news particularly caught my attention: <a href="http://www.sfchronicle.com/business/article/Tech-bus-drivers-forced-to-live-in-cars-to-make-6517928.php">Tech bus drivers forced to live in cars to make ends meet</a>.</p></li>
-<li><p>Second reason is because I have spoken there!! This has been, by far, the biggest conference I've had the pleasure to speak at. And I really enjoyed it!! The talk was actually a live coding demo (best kind of talks for sure, aren't they?) showing how I, being a Cassandra developer, not admin, tackled a production issue a couple of months ago. You can see the exact steps in <a href="http://engineering.mydrivesolutions.com/posts/cassandra_10_seconds_back/">this previous blog post</a> and also in <a href="https://www.youtube.com/watch?v=nwscaRTmVCM">this video</a> of this same talk in <a href="http://www.meetup.com/Cassandra-London/events/224555591/">the London Cassandra Meetup</a>.</p></li>
-<li><p>Third reason is because I've been officially certified as an Apache Cassandra Developer by DataStax and O'Reilly Media: <a href="https://twitter.com/calonso/status/646480545514258432">https://twitter.com/calonso/status/646480545514258432</a></p></li>
-<li><p>And finally, because I've been awarded with one of <a href="http://www.planetcassandra.org/mvps/">the DataStax MVPs of the year 2015</a>!! And, to be honest, I couldn't be more excited. I love Cassandra and I love contributing to OS projects and getting some recognition on it is always welcome. I'd like to congratulate every other MVP of this year (full roster to be announced soon) and the whole DataStax for such a great and well organised event.</p></li>
-</ul>
-
-<h2 id="toc_1">Tech Notes. Day 1</h2>
-
-<p>And after all this personal notes let's go into the technical notes I've made from the talks I've attended. Hope you find them interesting!!</p>
-
-<blockquote>
-<p><a href="http://esri.github.io/">http://esri.github.io/</a> project and it's <a href="https://github.com/Esri/gis-tools-for-hadoop">GIS tools for Hadoop subproject</a></p>
-</blockquote>
+<p><a href="http://www.mydrivesolutions.com/engineering/cassandra-summit-2015/">http://www.mydrivesolutions.com/engineering/cassandra-summit-2015/</a></p>
 </div>
 
   <div class="more">
@@ -122,20 +103,9 @@ Either because the cluster needs to scale and some nodes are too small or becaus
   <h3 class="title"><a href="/posts/docker_at_accu_2015">Docker at ACCU 2015</a> <span class="date">2015-10-26</span></h3>
 
   <div class="summary">
-<p>Back in April Gavin Heavyside, MyDrive's Director of Engineering, spoke about Docker at the annual ACCU conference. MyDrive is using Docker in production for a number of services, and our use is set to grow.</p>
+<p>This post has moved:</p>
 
-<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/ihts6OyVDVczvX" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen>
-</iframe>
-</p>
-<div style="margin-bottom:5px">
-  <strong>
-    <a href="//www.slideshare.net/gheavyside/docker-at-accu2015" title="Docker at ACCU2015" target="_blank">Docker at ACCU2015</a>
-  </strong>
-  from
-  <strong>
-    <a href="//www.slideshare.net/gheavyside" target="_blank">Gavin Heavyside</a>
-  </strong>
-</div>
+<p><a href="http://www.mydrivesolutions.com/engineering/docker-at-accu-2015/">http://www.mydrivesolutions.com/engineering/docker-at-accu-2015/</a></p>
 </div>
 
   <div class="more">
@@ -145,72 +115,10 @@ Either because the cluster needs to scale and some nodes are too small or becaus
 <div class="post">
   <h3 class="title"><a href="/posts/ds_stack_setup">Fitting IPython Notebooks, Spark and Cassandra all together</a> <span class="date">2015-10-23</span></h3>
 
-  <div class="summary ellipsis">
-<h1 id="toc_0">Fitting IPython Notebooks, Spark and Cassandra all together</h1>
+  <div class="summary">
+<p>This post has moved:</p>
 
-<p>Yesterday after more than a whole week working on this I've finally managed to set all this stack up.</p>
-
-<p>This stack is one of the most hot and trending topics nowadays as it is very useful for BigData, specifically for data exploration purposes.</p>
-
-<p>My starting point was a 3 nodes Cassandra cluster, intended for analytics, data exploration and adhoc reporting. This cluster was running
-DSE (DataStax Enterprise) 4.6, which ships with Cassandra 2.0. Worth mentioning that the cluster was running in Cassandra only mode.</p>
-
-<p>After having attended to the latest <a href="http://mrcalonso.com/notes-on-cassandra-summit-2015/">Cassandra Summit '15</a>, it was made clear not to use
-Spark with any Cassandra earlier than 2.1.8, because the integration was buggy. Therefore:</p>
-
-<ol>
-<li>Upgrade DSE to latest (4.8) version, that includes Cassandra 2.1.10.
-
-<ul>
-<li>Step by step instructions here: <a href="http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html">http://docs.datastax.com/en/upgrade/doc/upgrade/datastax_enterprise/upgradeDSE47.html</a>
-</li>
-</ul>
-</li>
-<li>Next step is to enable Spark on the cluster. This is one of the points where relying on something like DSE comes in handy, as the DSE distribution comes
-with a Spark installation and the Cassandra-Spark connector already configured and optimised for maximum compatbility and throughput. It is also really easy to
-enable Spark on the nodes.
-
-<ul>
-<li>For more information on this, head here: <a href="http://docs.datastax.com/en/datastax_enterprise/4.8/datastax_enterprise/anaHome/anaHomeTOC.html">http://docs.datastax.com/en/datastax<em>enterprise/4.8/datastax</em>enterprise/anaHome/anaHomeTOC.html</a>
-</li>
-</ul>
-</li>
-<li>Once I had Cassandra and Spark running on all nodes and one of them was designated as the Spark Master (first of the Cassandra seeds by default, but you can check it with <code>dse client-tool spark master-address</code>), it's time to install IPython and all its dependencies:
-
-<ol>
-<li>First step is to install all system required packages (use apt-get, yum, etc depending on your OS): <code>sudo apt-get install build-essential libcurl4-openssl-dev libssl-dev zlib1g-dev libpcre3-dev gfortran libblas-dev libblas3gf liblapack3gf liblapack-dev libncurses5-dev libatlas-dev libatlas-base-dev libscalapack-mpi1 libscalapack-pvm1 liblcms-utils python-imaging-doc python-imaging-dbg libamd2.3.1 libjpeg-turbo8 libjpeg8 liblcms1 libumfpack5.6.2 python-imaging libpng12-0 libpng12-dev libfreetype6 libfreetype6-dev libcurl4-gnutls-dev python-pycurl-dbg git-core cython libhdf5-7 libhdf5-serial-dev python-egenix-mxdatetime vim python-numpy python-scipy pandoc openjdk-7-jdk</code>
-</li>
-<li>Next step is to install <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">Python Virtualenv</a>, as IPython depends on Python and changing the system's Python installation can be dangerous: <code>sudo pip install virtualenv</code>
-</li>
-<li>Then, create a folder for your installation. This folder will contain the virtual environment for the notebooks installation (ipynb in this example). <code>mkdir ipynb</code> and <code>cd ipynb</code>
-</li>
-<li>Create a virtual environment: <code>virtualenv ipython</code>. Where ipython is the name of the virtual environment we're creating.</li>
-<li>To begin using the virtual environment we need to activate it: <code>source ipython/bin/activate</code>. At this point our prompt will indicate that we're inside the <code>ipython</code> virtual env.</li>
-<li>Install all IPython's dependencies (using pip): <code>pip install uwsgi numpy freetype-py pillow scipy python-dateutil pytz six scikit-learn pandas matplotlib pygments readline nose pexpect cython networkx numexpr tables patsy statsmodels sympy scikit-image theano xlrd xlwt ipython[notebook]</code>
-</li>
-</ol>
-</li>
-<li>Let's create a IPython default profile (we'll not use it, but it's safe to create it to avoid bugs and strange issues)
-
-<ul>
-<li><code>./ipython/bin/ipython profile create --profile=default --ipython-dir .ipython</code></li>
-</ul>
-</li>
-<li>Then we create the pyspark ipython profile we'll use.
-
-<ul>
-<li><code>./ipython/bin/ipython profile create --profile=pyspark --ipython-dir .ipython</code></li>
-</ul>
-</li>
-<li>Now install MathJax extension:
-
-<ul>
-<li><code>python -c "from IPython.external.mathjax import install_mathjax; install_mathjax(replace=True, dest='~/ipynb/ipython/lib/python2.7/site-packages/IPython/html/static/mathjax')"</code></li>
-</ul>
-</li>
-<li>Now paste the following contents into <code>~/ipynb/.ipython/profile_pyspark/ipython_notebook_config.py</code>
-</li>
-</ol>
+<p><a href="http://www.mydrivesolutions.com/engineering/fitting-ipython-notebooks-spark-and-cassandra-all-together/">http://www.mydrivesolutions.com/engineering/fitting-ipython-notebooks-spark-and-cassandra-all-together/</a></p>
 </div>
 
   <div class="more">
@@ -220,31 +128,10 @@ enable Spark on the nodes.
 <div class="post">
   <h3 class="title"><a href="/posts/job_descriptions">Voting on Job Descriptions</a> <span class="date">2015-06-11</span></h3>
 
-  <div class="summary ellipsis">
-<p><img src="/assets/media/job_voting/voting.jpg" alt="Voting on Job Descriptions"></p>
+  <div class="summary">
+<p>This post has moved:</p>
 
-<p>Like most small companies we have trouble <a href="https://twitter.com/_mydrive">@MyDrive</a> in attracting the best
-engineering staff when we're recruiting. We're not Google or Apple, with a huge
-global presence, most developers have probably never heard of us. The current
-job market for developers is really competitive, there aren't that many great
-developers out there, most of them are already in work and everyone is competing
-for them.</p>
-
-<p>We've recently been recruiting for an iOS developer role, to lead the development
-of our telematics apps. I think it's actually a really interesting, fun role, which
-will involve lots of really quite difficult tasks, really stretching the technology.</p>
-
-<p>Our challenge is to make sure that we can get that across in our job adverts.</p>
-
-<p>Our process includes a couple of <a href="https://github.com/mydrive/code-tests">coding tests</a>. One of which
-candidates can do on their own at home, and a much smaller one which we do in
-house, just to verify what we've seen on the external test.</p>
-
-<p>A few candidates have responded and taken the test and it gives a
-good view of where someone is in their development. It also gives you a real
-example to discuss with a candidate about why they made certain decisions, what
-their thought processes were, and what they'd do differently next time. We haven't
-found the right person yet, but it's been really worthwhile.</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/voting-on-job-descriptions/">http://www.mydrivesolutions.com/engineering/voting-on-job-descriptions/</a></p>
 </div>
 
   <div class="more">

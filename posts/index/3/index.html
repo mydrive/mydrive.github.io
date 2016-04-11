@@ -53,31 +53,10 @@
       <div class="posts">
         <h3 class="title"><a href="/posts/africa_mentorship">MyDrive team helping bright minds in Africa</a> <span class="date">2015-02-13</span></h3>
 
-        <div class="summary ellipsis">
-<p>Here <a href="https://twitter.com/_mydrive">@MyDrive</a> we are aware that not everyone in
-the world has the same possibilities of studying or sharpening their skills to
-be more competent in the professional environment.</p>
+        <div class="summary">
+<p>This post has moved:</p>
 
-<p>That's even more unfair when we focus on development/coding, mostly because of the
-global nature Internet gives to our professional environment.</p>
-
-<p>Luckily <a href="https://twitter.com/hackhands">@HackHands</a> guys came with a really nice
-program. A special <strong>Africa Mentorship Program</strong> consisting on low-cost, remote pair
-programming sessions for mentees enrolled in the program.</p>
-
-<p>Mentees can pick their favourite subject among a wide range of useful and carefully
-picked technologies like <em>Ruby on Rails</em>, <em>Python</em> or <em>JavaScript (MEAN stack)</em>,
-then they are assigned a mentor and learning starts! (as far as Internet connectivity
-allows it, of course :))</p>
-
-<p>Personally I'm finding it very rewarding and easy. My mentee is a really smart and
-enthusiastic girl that, when we had our first pairing session, she already had a lot
-of important concepts well understood. Our strategy therefore is that she goes through
-the <a href="https://www.railstutorial.org/book">Rails Tutorial Book</a> by
-<a href="https://twitter.com/mhartl">@Michael Hartl</a> on her own and when she feels stuck
-or she has compiled a fair amount of questions then we schedule a new pairing
-session of, normally, less than an hour to unblock her and we both think that this
-is working great!</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/mydrive-team-helping-bright-minds-in-africa/">http://www.mydrivesolutions.com/engineering/mydrive-team-helping-bright-minds-in-africa/</a></p>
 </div>
 
         <div class="more">
@@ -88,26 +67,9 @@ is working great!</p>
         <h3 class="title"><a href="/posts/ghost">GHOST CVE-2015-0235</a> <span class="date">2015-02-02</span></h3>
 
         <div class="summary">
-<p>Last week saw the first brand-name bug of 2015 in the shape of GHOST
-<a href="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2015-0235">CVE</a>,
-<a href="http://ma.ttias.be/ghost-critical-glibc-update-cve-2015-0235-gethostbyname-calls/">Explanation</a>.</p>
+<p>This post has moved:</p>
 
-<p>Using our automated config management tools (Chef) we patched all systems
-operated by MyDrive within 24 hours of a patch being made available by our
-operating system vendor, and then performed a rolling reboot of all systems as
-a precautionary measure to ensure all services were using the patched library.
-This was all completed by noon UTC on Weds 28th Jan 2015.</p>
-
-<p>MyDrive Solutions' operational staff closely monitor security disclosure
-announcements, and patched all systems immediately when patches were issued by
-our operating system vendor. Our automated configuration management tools
-allow us to apply security patches such as this across our entire
-infrastructure in moments.</p>
-
-<p>We continue to proactively monitor our suppliers and vendors for issues
-arising from security announcements.</p>
-
-<p>We do not believe any action is required from our customers.</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/ghost-cve-2015-0235/">http://www.mydrivesolutions.com/engineering/ghost-cve-2015-0235/</a></p>
 </div>
 
         <div class="more">
@@ -117,30 +79,10 @@ arising from security announcements.</p>
       <div class="posts">
         <h3 class="title"><a href="/posts/ruby_thread_sync">Ruby Thread Synchronisation</a> <span class="date">2015-01-29</span></h3>
 
-        <div class="summary ellipsis">
-<p>Multi-Threading programming is one of those things that I like doing from time
-to time. I find it particularly useful when automating any task that involves
-network downloading.</p>
+        <div class="summary">
+<p>This post has moved:</p>
 
-<p>My approach is usually a <a href="http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern">Publish-subscribe</a> using the very handy Ruby's
-<a href="http://ruby-doc.org/stdlib-2.0/libdoc/thread/rdoc/Queue.html"><code>Queue</code> class</a>.</p>
-
-<p>Sometimes I build it using several stages, i.e. last time I used it I was building
-a tool for downloading and processing a whole S3 bucket and I designed it with
-two messaging layers. First one publishes object names within the bucket
-for the second one to pick them and actually download and process them and finally
-publish the results for an aggregator thread (the main program's thread).</p>
-
-<p><img src="/assets/media/2_stages_pub_sub_diagram.png" alt="2 Stages Pub Sub Diagram"></p>
-
-<p>My programming approach to this is leveraging all synchronisation in queues rather
-than waiting for threads or passing messages between them.
-But don't worry, that's not a crazy or hacky approach at all, is just the Ruby's
-recommended way.</p>
-
-<p>So, what I'm going to do here is just explain by an example how to properly do
-it avoiding errors and obtaining a clean end. Let's start off by showing a
-failing example.</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/ruby-thread-synchronisation/">http://www.mydrivesolutions.com/engineering/ruby-thread-synchronisation/</a></p>
 </div>
 
         <div class="more">
@@ -151,14 +93,9 @@ failing example.</p>
         <h3 class="title"><a href="/posts/rails-cve-2014-7818">Ruby on Rails CVE-2014-7818</a> <span class="date">2014-10-30</span></h3>
 
         <div class="summary">
-<p>A vulnerability in a Ruby on Rails component was announced earlier today.</p>
+<p>This post has moved:</p>
 
-<p>We have determined that MyDrive's applications were not vulnerable to attack as
-we do not serve static assets through rails, instead we use our web server
-(nginx). Nevertheless we have patched all production services using Ruby on
-Rails.</p>
-
-<p>No action is required from our customers.</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/ruby-on-rails-cve-2014-7818/">http://www.mydrivesolutions.com/engineering/ruby-on-rails-cve-2014-7818/</a></p>
 </div>
 
         <div class="more">
@@ -168,29 +105,10 @@ Rails.</p>
       <div class="posts">
         <h3 class="title"><a href="/posts/security-update-2014-10-17">Security Updates (POODLE and OpenSSL)</a> <span class="date">2014-10-17</span></h3>
 
-        <div class="summary ellipsis">
-<p>A couple of security vulnerabilities were announced this week which are worth noting.</p>
+        <div class="summary">
+<p>This post has moved:</p>
 
-<p>The first was a vulnerability in SSL V3, which was nicknamed
-<a href="http://googleonlinesecurity.blogspot.co.uk/2014/10/this-poodle-bites-exploiting-ssl-30.html">POODLE</a>
-by the researchers who discovered it. This protocol is 18 years old, but was
-still widely supported. After the announcement, MyDrive removed support for SSL
-v3 from all web servers and load balancers. Updates were completed on
-Wednesday 15th October 2014.</p>
-
-<p>The second notable vulnerability was in
-<a href="http://www.ubuntu.com/usn/usn-2385-1/">OpenSSL</a>. All servers were patched and
-affected servers or services rebooted on Thursday 16th October 2014. This patch
-also provided additional protection against the POODLE bug.</p>
-
-<p>MyDrive Solutions' operational staff closely monitor security disclosure
-announcements, and patched all systems immediately when patches were issued by
-our operating system vendor. Our automated configuration management tools
-allow us to apply security patches such as this across our entire
-infrastructure in moments.</p>
-
-<p>We continue to proactively monitor our suppliers and vendors for issues
-arising from security announcements.</p>
+<p><a href="http://www.mydrivesolutions.com/engineering/security-updates-poodle-and-openssl/">http://www.mydrivesolutions.com/engineering/security-updates-poodle-and-openssl/</a></p>
 </div>
 
         <div class="more">
